@@ -61,14 +61,14 @@
     
     <!-- Template for FlyoutHeader -->
     <!-- Not required, as the FlyoutHeader is set above -->
-<!--    <Shell.FlyoutHeaderTemplate>
+    <!--<Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Black"
-                  HeightRequest="200">
+                  HeightRequest="250">
                 <Image Aspect="AspectFill" 
-                       Source="xamarinstore.jpg" 
+                       Source="dragonlogo.png" 
                        Opacity="0.6" />
-                <Label Text="Animals" 
+                <Label Text="Spell Organizer" 
                        TextColor="White" 
                        FontAttributes="Bold" 
                        HorizontalTextAlignment="Center"
@@ -115,26 +115,36 @@
         </DataTemplate>
     </Shell.MenuItemTemplate>-->
     
-    <FlyoutItem Route="animals"
-                Title="Animals"
+    <FlyoutItem Route="menu"
+                Title="Menu"
                 FlyoutDisplayOptions="AsMultipleItems">
-        <Tab Title="Domestic"
-             Route="domestic"
+        <Tab Title="Spells"
+             Route="spells"
              Icon="paw.png">
-            <ShellContent Route="cats"
+            <ShellContent Route="allspells"
                           Style="{StaticResource DomesticShell}"
-                          Title="Cats"
+                          Title="All Spells"
                           Icon="cat.png"
                           ContentTemplate="{DataTemplate views:CatsPage}" />
-            <ShellContent Route="dogs"
+            <ShellContent Route="spellsbyclass"
                           Style="{StaticResource DomesticShell}"
-                          Title="Dogs"
+                          Title="Spells by Class"
+                          Icon="dog.png"
+                          ContentTemplate="{DataTemplate views:DogsPage}" />
+            <ShellContent Route="spellsbyschool"
+                          Style="{StaticResource DomesticShell}"
+                          Title="Spells by School"
+                          Icon="dog.png"
+                          ContentTemplate="{DataTemplate views:DogsPage}" />
+            <ShellContent Route="spellsbyrace"
+                          Style="{StaticResource DomesticShell}"
+                          Title="Spells by Race"
                           Icon="dog.png"
                           ContentTemplate="{DataTemplate views:DogsPage}" />
         </Tab>
-        <ShellContent Route="monkeys"
+        <ShellContent Route="characters"
                       Style="{StaticResource MonkeysShell}"
-                      Title="Monkeys"
+                      Title="Characters"
                       Icon="monkey.png"
                       ContentTemplate="{DataTemplate views:MonkeysPage}" />
         <ShellContent Route="elephants"
@@ -155,9 +165,9 @@
                   Icon="info.png"
                   ContentTemplate="{DataTemplate views:AboutPage}" />
                   
-    <MenuItem Text="Random"
+    <!--<MenuItem Text="Random"
               Icon="random.png"
-              Command="{Binding RandomPageCommand}" />
+              Command="{Binding RandomPageCommand}" />-->
     <MenuItem Text="Help"
               Icon="help.png"
               Command="{Binding HelpCommand}"
