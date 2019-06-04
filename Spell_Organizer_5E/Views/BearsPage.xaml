@@ -5,7 +5,9 @@
              xmlns:data="clr-namespace:Spell_Organizer_5E.Data"
              xmlns:views="clr-namespace:Spell_Organizer_5E.Views"
              x:Class="Spell_Organizer_5E.Views.BearsPage"
-             Title="Bears">
+             Title="Bears"
+             BackgroundColor = "#313a3f">
+    
     <ContentPage.Resources>
         <Style TargetType="Grid">
             <Setter Property="VisualStateManager.VisualStateGroups">

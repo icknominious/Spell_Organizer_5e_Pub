@@ -19,7 +19,9 @@ namespace Spell_Organizer_5E
         public ICommand HelpCommand => new Command<string>((url) => Device.OpenUri(new Uri(url)));
         //public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
 
-        static SpellDatabase database;
+        static SODatabase database;
+
+        XMLReader myReader = new XMLReader();
 
         public AppShell()
         {
@@ -29,13 +31,15 @@ namespace Spell_Organizer_5E
         }
 
 
-        public static SpellDatabase Database
+
+
+        public static SODatabase Database
         {
             get
             {
                 if (database == null)
                 {
-                    database = new SpellDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Spells.db3"));
+                    database = new SODatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Spells.db"));
                 }
                 return database;
             }
@@ -55,6 +59,7 @@ namespace Spell_Organizer_5E
                 Routing.RegisterRoute(item.Key, item.Value);
             }
         }
+
 
         //async Task NavigateToRandomPageAsync()
         //{

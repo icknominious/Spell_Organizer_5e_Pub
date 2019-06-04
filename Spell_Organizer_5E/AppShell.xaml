@@ -45,7 +45,7 @@
                TargetType="Element" 
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
-                    Value="#546DFE" />
+                    Value="#fe5353" />
         </Style>
         <Style x:Key="AboutShell" 
                TargetType="Element" 
@@ -114,10 +114,30 @@
             </Grid>
         </DataTemplate>
     </Shell.MenuItemTemplate>-->
-    
+
+    <ShellContent Route="homepage"
+                      Style="{StaticResource ElephantsShell}"
+                      Title="Home"
+                      Icon="elephant.png"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+
     <FlyoutItem Route="menu"
                 Title="Menu"
                 FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Characters"
+             Route="characters"
+             Icon="paw.png">
+            <ShellContent Route="newcharacter"
+                          Style="{StaticResource MonkeysShell}"
+                          Title="New Character"
+                          Icon="monkey.png"
+                          ContentTemplate="{DataTemplate views:MonkeysPage}" />
+            <ShellContent Route="savedcharacter"
+                          Style="{StaticResource MonkeysShell}"
+                          Title="Saved Character"
+                          Icon="monkey.png"
+                          ContentTemplate="{DataTemplate views:MonkeysPage}" />
+        </Tab>
         <Tab Title="Spells"
              Route="spells"
              Icon="paw.png">
@@ -136,25 +156,11 @@
                           Title="Spells by School"
                           Icon="dog.png"
                           ContentTemplate="{DataTemplate views:DogsPage}" />
-            <ShellContent Route="spellsbyrace"
-                          Style="{StaticResource DomesticShell}"
-                          Title="Spells by Race"
-                          Icon="dog.png"
-                          ContentTemplate="{DataTemplate views:DogsPage}" />
         </Tab>
-        <ShellContent Route="characters"
-                      Style="{StaticResource MonkeysShell}"
-                      Title="Characters"
-                      Icon="monkey.png"
-                      ContentTemplate="{DataTemplate views:MonkeysPage}" />
-        <ShellContent Route="elephants"
-                      Style="{StaticResource ElephantsShell}"
-                      Title="Elephants"
-                      Icon="elephant.png"
-                      ContentTemplate="{DataTemplate views:ElephantsPage}" />  
-        <ShellContent Route="bears"
+
+        <ShellContent Route="spelllists"
                       Style="{StaticResource BearsShell}"
-                      Title="Bears"
+                      Title="Spell Lists"
                       Icon="bear.png"
                       ContentTemplate="{DataTemplate views:BearsPage}" />
     </FlyoutItem>
@@ -165,9 +171,6 @@
                   Icon="info.png"
                   ContentTemplate="{DataTemplate views:AboutPage}" />
                   
-    <!--<MenuItem Text="Random"
-              Icon="random.png"
-              Command="{Binding RandomPageCommand}" />-->
     <MenuItem Text="Help"
               Icon="help.png"
               Command="{Binding HelpCommand}"
