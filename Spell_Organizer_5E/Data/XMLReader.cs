@@ -13,7 +13,7 @@ namespace Spell_Organizer_5E.Data
         XmlReader reader;
         public async System.Threading.Tasks.Task ReadFileAsync()
         {
-            var stream = await FileSystem.OpenAppPackageFileAsync("phb_spells_390.xml");
+            var stream = await FileSystem.OpenAppPackageFileAsync("srd_spells.xml");
 
             reader = new XmlTextReader(stream);
 

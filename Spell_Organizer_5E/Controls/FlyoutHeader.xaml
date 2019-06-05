@@ -8,7 +8,7 @@
                Source="dragonlogo.png" 
                Opacity="0.7" />
         <Label Text="Spell Organizer" 
-               TextColor="White" 
+               TextColor="DarkGray" 
                FontAttributes="Bold" 
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center" />

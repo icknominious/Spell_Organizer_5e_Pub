@@ -4,7 +4,8 @@
              xmlns:controls="clr-namespace:Spell_Organizer_5E.Controls"
              xmlns:data="clr-namespace:Spell_Organizer_5E.Data"
              x:Class="Spell_Organizer_5E.Views.MonkeysPage"
-             Title="Monkeys">
+             Title="Monkeys"
+             BackgroundColor = "#313a3f">
     <ContentPage.Resources>
         <Style TargetType="Grid">
             <Setter Property="VisualStateManager.VisualStateGroups">

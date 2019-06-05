@@ -4,6 +4,7 @@
        xmlns:controls="clr-namespace:Spell_Organizer_5E.Controls"
        xmlns:views="clr-namespace:Spell_Organizer_5E.Views"
        FlyoutHeaderBehavior="CollapseOnScroll"
+       FlyoutBackgroundColor="#666666"
        Navigating="OnNavigating"
        Navigated="OnNavigated"
        x:Class="Spell_Organizer_5E.AppShell">
