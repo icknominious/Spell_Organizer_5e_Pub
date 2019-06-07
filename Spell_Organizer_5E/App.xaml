@@ -26,6 +26,30 @@
                        VerticalOptions="End" />
             </Grid>
         </DataTemplate>
+
+        <DataTemplate x:Key="SpellTemplate">
+          <Grid Padding="10">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.RowSpan="2"
+                   Text="{Binding Name}"
+                   FontAttributes="Bold"
+                   HeightRequest="60" 
+                   WidthRequest="60" />
+            <Label Grid.Column="1"
+                  Text="{Binding School}"/>
+            <Label Grid.Row="1"
+                   Grid.Column="1"
+                   Text="{Binding Level}"
+                   FontAttributes="Italic"
+                   VerticalOptions="End" />
+          </Grid>
+        </DataTemplate>
         
         <DataTemplate x:Key="AnimalSearchTemplate">
             <Grid Padding="10">

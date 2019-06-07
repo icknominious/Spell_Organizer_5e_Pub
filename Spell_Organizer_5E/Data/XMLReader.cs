@@ -1,9 +1,7 @@
 ﻿using System;
-using System.IO;
 using System.Xml;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Essentials;
+using Spell_Organizer_5E.Models;
 
 
 namespace Spell_Organizer_5E.Data
@@ -15,24 +13,32 @@ namespace Spell_Organizer_5E.Data
         {
             var stream = await FileSystem.OpenAppPackageFileAsync("srd_spells.xml");
 
-            reader = new XmlTextReader(stream);
-
-            while (reader.Read())
+            XmlReaderSettings settings = new XmlReaderSettings
             {
-                switch (reader.NodeType)
+                Async = true
+            };
+
+            reader = XmlReader.Create(stream, settings);
+
+            Spell spell = new Spell();
+
+            while (await reader.ReadAsync())
+            {
+                try
                 {
-                    case XmlNodeType.Element: // The node is an element.
-                        Console.Write("<" + reader.Name);
-                        Console.WriteLine(">");
-                        break;
-                    case XmlNodeType.Text: //Display the text in each element.
-                        Console.WriteLine(reader.Value);
-                        break;
-                    case XmlNodeType.EndElement: //Display the end of the element.
-                        Console.Write("</" + reader.Name);
-                        Console.WriteLine(">");
-                        break;
+                    _ = reader.ReadToFollowing("name");
+                    Console.WriteLine(spell.Name=reader.ReadElementContentAsString("name", ""));
+                    Spell otherSpell = await App.Database.GetSpellAsync(spell.Name);
+                    if (otherSpell == null)
+                    {
+                        _ = reader.ReadToFollowing("level");
+                        Console.WriteLine(spell.Level = reader.ReadElementContentAsInt());
+                        _ = reader.ReadToFollowing("school");
+                        Console.WriteLine(spell.School = reader.ReadElementContentAsString("school", ""));
+                        await App.Database.SaveSpellAsync(spell);
+                    }
                 }
+                catch(System.Xml.XmlException){ };
             }
         }
     }

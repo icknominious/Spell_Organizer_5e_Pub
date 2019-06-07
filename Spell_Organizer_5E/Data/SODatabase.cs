@@ -25,10 +25,10 @@ namespace Spell_Organizer_5E.Data
             return _database.Table<Character>().ToListAsync();
         }
 
-        public Task<Spell> GetSpellAsync(int id)
+        public Task<Spell> GetSpellAsync(string name)
         {
             return _database.Table<Spell>()
-                            .Where(i => i.ID == id)
+                            .Where(i => i.Name == name)
                             .FirstOrDefaultAsync();
         }
 
@@ -41,26 +41,13 @@ namespace Spell_Organizer_5E.Data
 
         public Task<int> SaveSpellAsync(Spell Spell)
         {
-            if (Spell.ID != 0)
-            {
-                return _database.UpdateAsync(Spell);
-            }
-            else
-            {
-                return _database.InsertAsync(Spell);
-            }
+            //return Spell.Name == "" ? _database.UpdateAsync(Spell) : _database.InsertAsync(Spell);
+            return _database.InsertAsync(Spell);
         }
 
         public Task<int> SaveCharacterAsync(Character Character)
         {
-            if (Character.ID != 0)
-            {
-                return _database.UpdateAsync(Character);
-            }
-            else
-            {
-                return _database.InsertAsync(Character);
-            }
+            return Character.ID != 0 ? _database.UpdateAsync(Character) : _database.InsertAsync(Character);
         }
 
         public Task<int> DeleteSpellAsync(Spell Spell)

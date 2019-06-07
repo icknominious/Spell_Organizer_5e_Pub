@@ -1,12 +1,10 @@
-﻿using System;
-using SQLite;
+﻿using SQLite;
 
 namespace Spell_Organizer_5E.Models
 {
     public class Spell
     {
-        [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        [PrimaryKey]
         public string Name { get; set; }
         public int Level { get; set; }
         public string Time { get; set; }

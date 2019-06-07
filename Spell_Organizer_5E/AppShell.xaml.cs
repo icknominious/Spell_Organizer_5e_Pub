@@ -1,8 +1,5 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Spell_Organizer_5E.Data;
@@ -19,7 +16,7 @@ namespace Spell_Organizer_5E
         public ICommand HelpCommand => new Command<string>((url) => Device.OpenUri(new Uri(url)));
         //public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
 
-        static SODatabase database;
+        
 
         XMLReader myReader = new XMLReader();
 
@@ -28,21 +25,6 @@ namespace Spell_Organizer_5E
             InitializeComponent();
             RegisterRoutes();
             BindingContext = this;
-        }
-
-
-
-
-        public static SODatabase Database
-        {
-            get
-            {
-                if (database == null)
-                {
-                    database = new SODatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Spells.db"));
-                }
-                return database;
-            }
         }
 
 

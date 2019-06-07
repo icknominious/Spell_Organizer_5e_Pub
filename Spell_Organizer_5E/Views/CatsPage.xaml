@@ -25,17 +25,17 @@
         </Style>
     </ContentPage.Resources>
 
-    <Shell.SearchHandler>
+    <!--<Shell.SearchHandler>
         <controls:AnimalSearchHandler Placeholder="Enter search term"
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource AnimalSearchTemplate}"
                                       Animals="{x:Static data:CatData.Cats}"
                                       SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
-    </Shell.SearchHandler>
+    </Shell.SearchHandler>-->
     
     <CollectionView Margin="20"
-                    ItemsSource="{x:Static data:CatData.Cats}"
-                    ItemTemplate="{StaticResource AnimalTemplate}"
+                    ItemsSource="{x:Static data:SpellData.Spells}"
+                    ItemTemplate="{StaticResource SpellTemplate}"
                     SelectionMode="Single"
                     SelectionChanged="OnCollectionViewSelectionChanged" />      
 </ContentPage>
