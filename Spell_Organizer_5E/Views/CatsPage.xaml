@@ -32,10 +32,10 @@
                                       Animals="{x:Static data:CatData.Cats}"
                                       SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
     </Shell.SearchHandler>-->
-    
-    <CollectionView Margin="20"
-                    ItemsSource="{x:Static data:SpellData.Spells}"
+
+    <CollectionView x:Name="collectionView"
+                    Margin="20"
                     ItemTemplate="{StaticResource SpellTemplate}"
                     SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />      
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
 </ContentPage>

@@ -38,7 +38,7 @@ namespace Spell_Organizer_5E.Data
                         await App.Database.SaveSpellAsync(spell);
                     }
                 }
-                catch(System.Xml.XmlException){ };
+                catch (XmlException) { /*Do nothing. Last read operation will find nothing and throw an exception*/};
             }
         }
     }

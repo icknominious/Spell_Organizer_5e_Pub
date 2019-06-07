@@ -11,6 +11,13 @@ namespace Spell_Organizer_5E.Views
             InitializeComponent();
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            collectionView.ItemsSource = await App.Database.GetSpellsAsync();
+        }
+
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string catName = (e.CurrentSelection.FirstOrDefault() as Animal).Name;

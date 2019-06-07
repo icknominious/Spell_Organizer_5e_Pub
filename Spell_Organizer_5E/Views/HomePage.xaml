@@ -5,12 +5,82 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Spell_Organizer_5E.Views.HomePage"
-             BackgroundColor = "#313a3f">
+             BackgroundColor="#313a3f"
+             Title="Home">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout  Padding="10,50,10,50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="125" x:Name="firstRow" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="125" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout x:Name="NC" BackgroundColor="DarkCyan" Grid.Row="0" Grid.Column="0" BindingContext="{x:Reference Name=NC}"  >
+                    <Button  BackgroundColor="DarkCyan"
+                             WidthRequest="{Binding Path=Width}"
+                             HeightRequest="{Binding Path=Height}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Text="New Character"
+                             TextColor="GhostWhite"
+                             Clicked="NC_Button_Clicked"/>
+                </StackLayout>
+                <StackLayout x:Name="SC" BackgroundColor="DarkCyan" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" BindingContext="{x:Reference Name=SC}">
+                    <Button  BackgroundColor="DarkCyan"
+                             WidthRequest="{Binding Path=Width}"
+                             HeightRequest="{Binding Path=Height}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Text="Saved Characters"
+                             TextColor="GhostWhite"
+                             Clicked="SC_Button_Clicked"/>
+                </StackLayout>
+                <StackLayout x:Name="SP" BackgroundColor="DarkViolet" Grid.Row="1" Grid.Column="0"  BindingContext="{x:Reference Name=SP}">
+                    <Button  BackgroundColor="DarkViolet"
+                             WidthRequest="{Binding Path=Width}"
+                             HeightRequest="{Binding Path=Height}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center" 
+                             Text="Spells"
+                             TextColor="GhostWhite"
+                             Clicked="SP_Button_Clicked"/>
+                </StackLayout>
+                <StackLayout x:Name="SbC" BackgroundColor="DarkViolet" Grid.Row="1" Grid.Column="1"  BindingContext="{x:Reference Name=SbC}">
+                    <Button  BackgroundColor="DarkViolet"
+                             WidthRequest="{Binding Path=Width}"
+                             HeightRequest="{Binding Path=Height}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Text="Spells by Class"
+                             TextColor="GhostWhite"
+                             Clicked="SbC_Button_Clicked"/>
+                </StackLayout>
+                <StackLayout x:Name="SbS" BackgroundColor="DarkViolet" Grid.Row="1" Grid.Column="2"  BindingContext="{x:Reference Name=SbS}">
+                    <Button  BackgroundColor="DarkViolet"
+                             WidthRequest="{Binding Path=Width}"
+                             HeightRequest="{Binding Path=Height}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Text="Spells by School"
+                             TextColor="GhostWhite"
+                             Clicked="SbS_Button_Clicked"/>
+                </StackLayout>
+                <StackLayout x:Name="SL" BackgroundColor="DarkOrange" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BindingContext="{x:Reference Name=SL}">
+                    <Button  BackgroundColor="DarkOrange"
+                             WidthRequest="{Binding Path=Width}"
+                             HeightRequest="{Binding Path=Height}"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Text="Spell Lists"
+                             TextColor="GhostWhite"
+                             Clicked="SL_Button_Clicked"/>
+                </StackLayout>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 

@@ -10,6 +10,8 @@ namespace Spell_Organizer_5E
     public partial class App : Application
     {
         static SODatabase database;
+
+        readonly XMLReader myReader = new XMLReader();
         public static SODatabase Database
         {
             get
@@ -29,9 +31,10 @@ namespace Spell_Organizer_5E
             MainPage = new AppShell();
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
             // Handle when your app starts
+            await myReader.ReadFileAsync();
         }
 
         protected override void OnSleep()

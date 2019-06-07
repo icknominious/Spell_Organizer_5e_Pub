@@ -28,13 +28,13 @@
                TargetType="Element" 
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor" 
-                    Value="#039BE6" />
+                    Value="DarkViolet" />
         </Style>
         <Style x:Key="MonkeysShell" 
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor" 
-                    Value="#689F39" />
+                    Value="DarkCyan" />
         </Style>
         <Style x:Key="ElephantsShell" 
                TargetType="Element" 
@@ -46,7 +46,7 @@
                TargetType="Element" 
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor"
-                    Value="#fe5353" />
+                    Value="DarkOrange" />
         </Style>
         <Style x:Key="AboutShell" 
                TargetType="Element" 
