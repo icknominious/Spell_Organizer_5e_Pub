@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Linq;
 using Xamarin.Forms;
-using Spell_Organizer_5E.Data;
 
 namespace Spell_Organizer_5E.Views
 {
@@ -10,10 +8,7 @@ namespace Spell_Organizer_5E.Views
     {
         public string Name
         {
-            set
-            {
-                BindingContext = CatData.Cats.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
-            }
+            set => BindingContext = App.Database.GetSpellAsync(Uri.UnescapeDataString(value)); //CatData.Cats.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
         }
 
         public CatDetailPage()

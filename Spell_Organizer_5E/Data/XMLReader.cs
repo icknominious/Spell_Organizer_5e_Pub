@@ -32,14 +32,27 @@ namespace Spell_Organizer_5E.Data
                     if (otherSpell == null)
                     {
                         _ = reader.ReadToFollowing("level");
-                        Console.WriteLine(spell.Level = reader.ReadElementContentAsInt());
+                        Console.WriteLine(spell.Level = reader.ReadElementContentAsInt("level", ""));
                         _ = reader.ReadToFollowing("school");
                         Console.WriteLine(spell.School = reader.ReadElementContentAsString("school", ""));
+                        _ = reader.ReadToFollowing("time");
+                        Console.WriteLine(spell.Time = reader.ReadElementContentAsString("time", ""));
+                        _ = reader.ReadToFollowing("range");
+                        Console.WriteLine(spell.Range = reader.ReadElementContentAsString("range", ""));
+                        _ = reader.ReadToFollowing("components");
+                        Console.WriteLine(spell.Components = reader.ReadElementContentAsString("components", ""));
+                        _ = reader.ReadToFollowing("duration");
+                        Console.WriteLine(spell.Duration = reader.ReadElementContentAsString("duration", ""));
+                        _ = reader.ReadToFollowing("classes");
+                        Console.WriteLine(spell.Classes = reader.ReadElementContentAsString("classes", ""));
+                        while (reader.Read() && reader.Name == "text")
+                            spell.Text += reader.ReadElementContentAsString("text", "");
                         await App.Database.SaveSpellAsync(spell);
                     }
                 }
                 catch (XmlException) { /*Do nothing. Last read operation will find nothing and throw an exception*/};
             }
+            Console.WriteLine("Done reading XML files");
         }
     }
 }

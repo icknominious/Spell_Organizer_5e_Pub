@@ -32,7 +32,7 @@ namespace Spell_Organizer_5E
         {
             routes.Add("monkeydetails", typeof(MonkeyDetailPage));
             routes.Add("beardetails", typeof(BearDetailPage));
-            routes.Add("catdetails", typeof(CatDetailPage));
+            routes.Add("spellcards", typeof(CatDetailPage));
             routes.Add("dogdetails", typeof(DogDetailPage));
             routes.Add("elephantdetails", typeof(ElephantDetailPage));
 

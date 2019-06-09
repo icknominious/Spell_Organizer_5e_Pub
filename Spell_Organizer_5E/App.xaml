@@ -28,26 +28,30 @@
         </DataTemplate>
 
         <DataTemplate x:Key="SpellTemplate">
-          <Grid Padding="10">
+          <Grid Padding="15" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-              <RowDefinition Height="Auto" />
-              <RowDefinition Height="Auto" />
+                <RowDefinition Height="40" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-              <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
-            <Label Grid.RowSpan="2"
-                   Text="{Binding Name}"
-                   FontAttributes="Bold"
-                   HeightRequest="60" 
-                   WidthRequest="60" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+            <Label Grid.Column="0"
+                    Text="{Binding Name}"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
             <Label Grid.Column="1"
-                  Text="{Binding School}"/>
-            <Label Grid.Row="1"
-                   Grid.Column="1"
-                   Text="{Binding Level}"
-                   FontAttributes="Italic"
-                   VerticalOptions="End" />
+                    Text="{Binding Level}"
+                    VerticalOptions="Center"/>
+            <Label Grid.Column="2"
+                    Text="{Binding School}"
+                    FontAttributes="Italic"
+                    VerticalOptions="Center" />
+            <Label Grid.Column="3"
+                Text="{Binding Time}"
+                VerticalOptions="Center" />
           </Grid>
         </DataTemplate>
         
