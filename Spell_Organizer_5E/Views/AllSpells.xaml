@@ -4,8 +4,8 @@
              xmlns:controls="clr-namespace:Spell_Organizer_5E.Controls"
              xmlns:data="clr-namespace:Spell_Organizer_5E.Data"
              xmlns:views="clr-namespace:Spell_Organizer_5E.Views"
-             x:Class="Spell_Organizer_5E.Views.CatsPage"
-             Title="Cats"
+             x:Class="Spell_Organizer_5E.Views.AllSpells"
+             Title="Browse by All Spells"
              BackgroundColor = "#313a3f">
     <ContentPage.Resources>
         <Style TargetType="Grid">

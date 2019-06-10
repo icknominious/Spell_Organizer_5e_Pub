@@ -24,7 +24,7 @@
         </Style>
         <Style TargetType="ShellItem" 
                BasedOn="{StaticResource BaseStyle}" />
-        <Style x:Key="DomesticShell"
+        <Style x:Key="SpellShell"
                TargetType="Element" 
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor" 
@@ -143,17 +143,17 @@
              Route="spells"
              Icon="paw.png">
             <ShellContent Route="allspells"
-                          Style="{StaticResource DomesticShell}"
+                          Style="{StaticResource SpellShell}"
                           Title="All Spells"
                           Icon="cat.png"
-                          ContentTemplate="{DataTemplate views:CatsPage}" />
+                          ContentTemplate="{DataTemplate views:AllSpells}" />
             <ShellContent Route="spellsbyclass"
-                          Style="{StaticResource DomesticShell}"
+                          Style="{StaticResource SpellShell}"
                           Title="Spells by Class"
                           Icon="dog.png"
                           ContentTemplate="{DataTemplate views:DogsPage}" />
             <ShellContent Route="spellsbyschool"
-                          Style="{StaticResource DomesticShell}"
+                          Style="{StaticResource SpellShell}"
                           Title="Spells by School"
                           Icon="dog.png"
                           ContentTemplate="{DataTemplate views:DogsPage}" />

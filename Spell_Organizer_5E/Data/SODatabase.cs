@@ -13,6 +13,8 @@ namespace Spell_Organizer_5E.Data
         {
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Spell>().Wait();
+            _database.CreateTableAsync<Character>().Wait();
+            _database.CreateTableAsync<SpellList>().Wait();
         }
 
         public Task<List<Spell>> GetSpellsAsync()
@@ -24,6 +26,12 @@ namespace Spell_Organizer_5E.Data
         {
             return _database.Table<Character>().ToListAsync();
         }
+
+        public Task<List<SpellList>> GetSpellListsAsync()
+        {
+            return _database.Table<SpellList>().ToListAsync();
+        }
+
 
         public Task<Spell> GetSpellAsync(string name)
         {
@@ -39,15 +47,26 @@ namespace Spell_Organizer_5E.Data
                             .FirstOrDefaultAsync();
         }
 
+        public Task<SpellList> GetSpellListAsync(int id)
+        {
+            return _database.Table<SpellList>()
+                            .Where(i => i.ID == id)
+                            .FirstOrDefaultAsync();
+        }
+
         public Task<int> SaveSpellAsync(Spell Spell)
         {
-            //return Spell.Name == "" ? _database.UpdateAsync(Spell) : _database.InsertAsync(Spell);
             return _database.InsertAsync(Spell);
         }
 
         public Task<int> SaveCharacterAsync(Character Character)
         {
             return Character.ID != 0 ? _database.UpdateAsync(Character) : _database.InsertAsync(Character);
+        }
+
+        public Task<int> SaveSpellListAsync(SpellList SpellList)
+        {
+            return SpellList.ID != 0 ? _database.UpdateAsync(SpellList) : _database.InsertAsync(SpellList);
         }
 
         public Task<int> DeleteSpellAsync(Spell Spell)
@@ -58,6 +77,11 @@ namespace Spell_Organizer_5E.Data
         public Task<int> DeleteCharacterAsync(Character Character)
         {
             return _database.DeleteAsync(Character);
+        }
+
+        public Task<int> DeleteCharacterAsync(SpellList SpellList)
+        {
+            return _database.DeleteAsync(SpellList);
         }
     }
 }

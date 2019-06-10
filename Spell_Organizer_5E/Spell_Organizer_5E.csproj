@@ -21,6 +21,14 @@
     <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\AllSpells.xaml.cs">
+      <DependentUpon>AllSpells.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SpellCard.xaml.cs">
+      <DependentUpon>SpellCard.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

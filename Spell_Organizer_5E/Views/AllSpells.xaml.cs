@@ -4,9 +4,9 @@ using Spell_Organizer_5E.Models;
 
 namespace Spell_Organizer_5E.Views
 {
-    public partial class CatsPage : ContentPage
+    public partial class AllSpells : ContentPage
     {
-        public CatsPage()
+        public AllSpells()
         {
             InitializeComponent();
         }
@@ -22,8 +22,6 @@ namespace Spell_Organizer_5E.Views
         {
             string spell = (e.CurrentSelection.FirstOrDefault() as Spell).Name;
             await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/allspells/spellcards?name={spell}");
-            // The full route is shown below.
-            // await Shell.Current.GoToAsync($"//animals/domestic/cats/catdetails?name={catName}");
         }
     }
 }
