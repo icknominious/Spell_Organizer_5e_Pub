@@ -20,7 +20,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <StackLayout x:Name="NC" BackgroundColor="DarkCyan" Grid.Row="0" Grid.Column="0" BindingContext="{x:Reference Name=NC}"  >
+                <StackLayout x:Name="NC" BackgroundColor="DarkCyan" Grid.Row="0" Grid.Column="0" BindingContext="{x:Reference Name=NC}">
                     <Button  BackgroundColor="DarkCyan"
                              WidthRequest="{Binding Path=Width}"
                              HeightRequest="{Binding Path=Height}"

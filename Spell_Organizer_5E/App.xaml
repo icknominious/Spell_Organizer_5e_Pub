@@ -35,17 +35,18 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="0.5*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
             <Label Grid.Column="0"
                     Text="{Binding Name}"
                     FontAttributes="Bold"
                     VerticalOptions="Center"/>
-            <Label Grid.Column="1"
+                <Label Grid.Column="1"
                     Text="{Binding Level}"
-                    VerticalOptions="Center"/>
-            <Label Grid.Column="2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start" />
+                <Label Grid.Column="2"
                     Text="{Binding School}"
                     FontAttributes="Italic"
                     VerticalOptions="Center" />
