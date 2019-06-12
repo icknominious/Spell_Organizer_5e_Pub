@@ -48,6 +48,7 @@ namespace Spell_Organizer_5E.Data
                         while (reader.Read() && reader.Name == "text")
                             spell.Text += reader.ReadElementContentAsString("text", "");
                         await App.Database.SaveSpellAsync(spell);
+
                     }
                 }
                 catch (XmlException) { /*Do nothing. Last read operation will find nothing and throw an exception*/};

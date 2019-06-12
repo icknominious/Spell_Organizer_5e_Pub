@@ -16,8 +16,6 @@ namespace Spell_Organizer_5E
         public ICommand HelpCommand => new Command<string>((url) => Device.OpenUri(new Uri(url)));
         //public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
 
-        
-
         XMLReader myReader = new XMLReader();
 
         public AppShell()

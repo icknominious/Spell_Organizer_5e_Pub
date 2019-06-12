@@ -4,8 +4,7 @@
              xmlns:controls="clr-namespace:Spell_Organizer_5E.Controls"
              xmlns:data="clr-namespace:Spell_Organizer_5E.Data"
              xmlns:views="clr-namespace:Spell_Organizer_5E.Views"
-             x:Class="Spell_Organizer_5E.Views.AllSpells"
-             Title="Browse by All Spells"
+             x:Class="Spell_Organizer_5E.Views.SpellsBySchool"
              BackgroundColor = "#313a3f">
     <ContentPage.Resources>
         <Style TargetType="Grid">
@@ -25,15 +24,15 @@
         </Style>
     </ContentPage.Resources>
 
-    <!--<Shell.SearchHandler>
-        <controls:AnimalSearchHandler Placeholder="Enter search term"
+    <Shell.SearchHandler>
+        <controls:SpellSearchHandler  x:Name="SpellSearchHandler"
+                                      Placeholder="Enter search term"
                                       ShowsResults="true"
                                       ItemTemplate="{StaticResource AnimalSearchTemplate}"
-                                      Animals="{x:Static data:CatData.Cats}"
-                                      SelectedItemNavigationTarget="{x:Type views:CatDetailPage}" />
-    </Shell.SearchHandler>-->
+                                      SelectedItemNavigationTarget="{x:Type views:SpellsBySchool}" />
+    </Shell.SearchHandler>
 
-    <CollectionView x:Name="collectionView"
+    <CollectionView x:Name="SpellsBySchoolView"
                     Margin="20"
                     ItemTemplate="{StaticResource SpellTemplate}"
                     SelectionMode="Single"

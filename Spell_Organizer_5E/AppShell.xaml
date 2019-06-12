@@ -151,12 +151,12 @@
                           Style="{StaticResource SpellShell}"
                           Title="Spells by Class"
                           Icon="dog.png"
-                          ContentTemplate="{DataTemplate views:DogsPage}" />
+                          ContentTemplate="{DataTemplate views:SpellsByClass}" />
             <ShellContent Route="spellsbyschool"
                           Style="{StaticResource SpellShell}"
                           Title="Spells by School"
                           Icon="dog.png"
-                          ContentTemplate="{DataTemplate views:DogsPage}" />
+                          ContentTemplate="{DataTemplate views:SpellsBySchool}" />
         </Tab>
 
         <ShellContent Route="spelllists"

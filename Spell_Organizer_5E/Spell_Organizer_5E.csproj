@@ -18,13 +18,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModels\" />
-    <Folder Include="Controls\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\AllSpells.xaml.cs">
+    <Compile Update="Views\Spells\SpellsBySchool.xaml.cs">
+      <DependentUpon>SpellsBySchool.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Spells\SpellsByClass.xaml.cs">
+      <DependentUpon>SpellsByClass.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Spells\AllSpells.xaml.cs">
       <DependentUpon>AllSpells.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\SpellCard.xaml.cs">
+    <Compile Update="Views\Spells\SpellCard.xaml.cs">
       <DependentUpon>SpellCard.xaml</DependentUpon>
     </Compile>
   </ItemGroup>

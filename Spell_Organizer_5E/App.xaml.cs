@@ -2,6 +2,7 @@
 using Spell_Organizer_5E.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
 using System.IO;
 using System;
 
@@ -11,7 +12,8 @@ namespace Spell_Organizer_5E
     public partial class App : Application
     {
         static SODatabase database;
-        static SpellList spellList;
+        static SpellList defaultSpellList;
+        //public static IList<Spell> Spells { get; set; }
 
         readonly XMLReader myReader = new XMLReader();
         public static SODatabase Database
@@ -30,27 +32,33 @@ namespace Spell_Organizer_5E
         {
             get
             {
-                if (spellList == null)
+                if (defaultSpellList == null)
                 {
-                    spellList = new SpellList();
-                    spellList.Name = "Default Spell List";
-                    Database.SaveSpellListAsync(spellList);
+                    defaultSpellList = new SpellList();
+                    defaultSpellList.Name = "Default Spell List";
+                    _ = Database.SaveSpellListAsync(defaultSpellList);
                 }
-                return spellList;
+                return defaultSpellList;
             }
         }
 
         public App()
         {
+            LoadData();
             InitializeComponent();
 
             MainPage = new AppShell();
         }
 
-        protected override async void OnStart()
+        private async void LoadData()
+        {
+            await myReader.ReadFileAsync();
+            //Spells = Database.GetSpellsAsync().Result;
+    }
+
+        protected override void OnStart()
         {
             // Handle when your app starts
-            await myReader.ReadFileAsync();
         }
 
         protected override void OnSleep()
