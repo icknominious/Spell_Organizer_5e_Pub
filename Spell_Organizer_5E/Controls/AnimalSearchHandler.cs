@@ -36,6 +36,7 @@ namespace Spell_Organizer_5E.Controls
             ShellNavigationState state = (App.Current.MainPage as Shell).CurrentState;
             // Note: strings will be URL encoded for navigation (e.g. "Blue Monkey" becomes "Blue%20Monkey"). Therefore, decode at the receiver.
             // This works because route names are unique in this application.
+            Console.WriteLine($"{GetNavigationTarget()}?name={((Animal)item).Name}");
             await Shell.Current.GoToAsync($"{GetNavigationTarget()}?name={((Animal)item).Name}");
         }
 

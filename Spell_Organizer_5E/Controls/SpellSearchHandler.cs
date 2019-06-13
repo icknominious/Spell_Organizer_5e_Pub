@@ -10,8 +10,6 @@ namespace Spell_Organizer_5E.Controls
     public class SpellSearchHandler : SearchHandler
     {
         public IList<Spell> Spells { get; set; }
-        public Type SelectedItemNavigationTarget { get; set; }
-
         protected override void OnQueryChanged(string oldValue, string newValue)
         {
             base.OnQueryChanged(oldValue, newValue);
@@ -29,20 +27,15 @@ namespace Spell_Organizer_5E.Controls
         protected override async void OnItemSelected(object item)
         {
             base.OnItemSelected(item);
-            await Task.Delay(1000);
+            await Task.Delay(500);
 
             ShellNavigationState state = (App.Current.MainPage as Shell).CurrentState;
-            Console.WriteLine(state.Location.Host + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            // Note: strings will be URL encoded for navigation (e.g. "Blue Monkey" becomes "Blue%20Monkey"). Therefore, decode at the receiver.
-            // This works because route names are unique in this application.
-            //Console.WriteLine(SelectedItemNavigationTarget.Name.ToLower());
-            //await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/{SelectedItemNavigationTarget.Name.ToLower()}/spellcards?name={((Spell)item).Name}");
-            await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/allspells/spellcards?name={((Spell)item).Name}");
+            await Shell.Current.GoToAsync($"{state.Location.OriginalString}/spellcards?name={((Spell)item).Name}");
         }
 
-        string GetNavigationTarget()
+        protected override void OnFocused()
         {
-            return (Shell.Current as AppShell).Routes.FirstOrDefault(route => route.Value.Equals(SelectedItemNavigationTarget)).Key;
+            base.OnFocused();
         }
     }
 }

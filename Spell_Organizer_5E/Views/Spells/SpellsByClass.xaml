@@ -25,16 +25,69 @@
     </ContentPage.Resources>
 
     <Shell.SearchHandler>
-        <controls:SpellSearchHandler  x:Name="SpellSearchHandler"
+        <controls:SpellSearchHandler  x:Name="ByClassSpellSearchHandler"
                                       Placeholder="Enter search term"
                                       ShowsResults="true"
-                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"
-                                      SelectedItemNavigationTarget="{x:Type views:SpellsByClass}" />
+                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"/>
     </Shell.SearchHandler>
 
-    <CollectionView x:Name="SpellsByClassView"
-                    Margin="20"
-                    ItemTemplate="{StaticResource SpellTemplate}"
-                    SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />
+    <Grid Margin="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.Column="0">
+            <Picker x:Name="ClassPicker"
+                    Title="Select a Class"
+                    TitleColor="WhiteSmoke"
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    BackgroundColor="DarkSlateGray"
+                    SelectedIndexChanged="OnClassPickerSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Bard</x:String>
+                        <x:String>Cleric</x:String>
+                        <x:String>Druid</x:String>
+                        <x:String>Fighter</x:String>
+                        <x:String>Paladin</x:String>
+                        <x:String>Ranger</x:String>
+                        <x:String>Rogue</x:String>
+                        <x:String>Sorcerer</x:String>
+                        <x:String>Warlock</x:String>
+                        <x:String>Wizard</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Grid.Row="0" Grid.Column="1">
+            <Picker x:Name="SortingPicker"
+                    Title="Sort By"
+                    TitleColor="WhiteSmoke"
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    BackgroundColor="DarkSlateGray"
+                    SelectedIndexChanged="OnSortingPickerSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Name (Ascending)</x:String>
+                        <x:String>Name (Descending)</x:String>
+                        <x:String>Level (Ascending)</x:String>
+                        <x:String>Level (Descending)</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <CollectionView x:Name="SpellsByClassView"
+                Margin="20"
+                ItemTemplate="{StaticResource SpellTemplate}"
+                SelectionMode="Single"
+                SelectionChanged="OnCollectionViewSelectionChanged" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

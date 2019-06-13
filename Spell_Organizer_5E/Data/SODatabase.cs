@@ -22,22 +22,33 @@ namespace Spell_Organizer_5E.Data
             return _database.Table<Spell>().ToListAsync();
         }
 
-        public Task<List<Character>> GetCharactersAsync()
+        public Task<List<Spell>> GetSpellsbyClassAsync(string characterClass)
         {
-            return _database.Table<Character>().ToListAsync();
+            return _database.Table<Spell>()
+                            .Where(i => i.Classes.Contains(characterClass))
+                            .ToListAsync();
         }
-
-        public Task<List<SpellList>> GetSpellListsAsync()
-        {
-            return _database.Table<SpellList>().ToListAsync();
-        }
-
 
         public Task<Spell> GetSpellAsync(string name)
         {
             return _database.Table<Spell>()
                             .Where(i => i.Name == name)
                             .FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveSpellAsync(Spell Spell)
+        {
+            return _database.InsertAsync(Spell);
+        }
+
+        public Task<int> DeleteSpellAsync(Spell Spell)
+        {
+            return _database.DeleteAsync(Spell);
+        }
+
+        public Task<List<Character>> GetCharactersAsync()
+        {
+            return _database.Table<Character>().ToListAsync();
         }
 
         public Task<Character> GetCharacterAsync(int id)
@@ -47,31 +58,9 @@ namespace Spell_Organizer_5E.Data
                             .FirstOrDefaultAsync();
         }
 
-        public Task<SpellList> GetSpellListAsync(int id)
-        {
-            return _database.Table<SpellList>()
-                            .Where(i => i.ID == id)
-                            .FirstOrDefaultAsync();
-        }
-
-        public Task<int> SaveSpellAsync(Spell Spell)
-        {
-            return _database.InsertAsync(Spell);
-        }
-
         public Task<int> SaveCharacterAsync(Character Character)
         {
             return Character.ID != 0 ? _database.UpdateAsync(Character) : _database.InsertAsync(Character);
-        }
-
-        public Task<int> SaveSpellListAsync(SpellList SpellList)
-        {
-            return SpellList.ID != 0 ? _database.UpdateAsync(SpellList) : _database.InsertAsync(SpellList);
-        }
-
-        public Task<int> DeleteSpellAsync(Spell Spell)
-        {
-            return _database.DeleteAsync(Spell);
         }
 
         public Task<int> DeleteCharacterAsync(Character Character)
@@ -79,7 +68,24 @@ namespace Spell_Organizer_5E.Data
             return _database.DeleteAsync(Character);
         }
 
-        public Task<int> DeleteCharacterAsync(SpellList SpellList)
+        public Task<List<SpellList>> GetSpellListsAsync()
+        {
+            return _database.Table<SpellList>().ToListAsync();
+        }
+
+        public Task<SpellList> GetSpellListAsync(int id)
+        {
+            return _database.Table<SpellList>()
+                            .Where(i => i.ID == id)
+                            .FirstOrDefaultAsync();
+        }  
+     
+        public Task<int> SaveSpellListAsync(SpellList SpellList)
+        {
+            return SpellList.ID != 0 ? _database.UpdateAsync(SpellList) : _database.InsertAsync(SpellList);
+        }
+     
+        public Task<int> DeleteSpellListAsync(SpellList SpellList)
         {
             return _database.DeleteAsync(SpellList);
         }

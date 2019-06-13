@@ -12,7 +12,7 @@ namespace Spell_Organizer_5E.Views
         {
             InitializeComponent();
             AllSpellsView.ItemsSource = Spells; //workaround 
-            SpellSearchHandler.Spells = Spells;
+            AllSpellSearchHandler.Spells = Spells;
         }
 
         //protected override async void OnAppearing()                       //doesnt work, xamarin bug

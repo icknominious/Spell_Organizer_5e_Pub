@@ -25,11 +25,10 @@
     </ContentPage.Resources>
 
     <Shell.SearchHandler>
-        <controls:SpellSearchHandler  x:Name="SpellSearchHandler"
+        <controls:SpellSearchHandler  x:Name="AllSpellSearchHandler"
                                       Placeholder="Enter search term"
                                       ShowsResults="true"
-                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"
-                                      SelectedItemNavigationTarget="{x:Type views:AllSpells}" />
+                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"/>
     </Shell.SearchHandler>
 
     <CollectionView x:Name="AllSpellsView"
