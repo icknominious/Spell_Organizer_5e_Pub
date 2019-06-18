@@ -29,7 +29,7 @@ namespace Spell_Organizer_5E
         void RegisterRoutes()
         {
             routes.Add("monkeydetails", typeof(MonkeyDetailPage));
-            routes.Add("beardetails", typeof(BearDetailPage));
+            routes.Add("spelllists", typeof(SpellLists));
             routes.Add("spellcards", typeof(SpellCard));
             routes.Add("dogdetails", typeof(DogDetailPage));
             routes.Add("elephantdetails", typeof(ElephantDetailPage));
@@ -41,34 +41,11 @@ namespace Spell_Organizer_5E
         }
 
 
-        //async Task NavigateToRandomPageAsync()
-        //{
-        //    string destinationRoute = routes.ElementAt(rand.Next(0, routes.Count)).Key;
-        //    string animalName = null;
-
-        //    switch (destinationRoute)
-        //    {
-        //        case "monkeydetails":
-        //            animalName = MonkeyData.Monkeys.ElementAt(rand.Next(0, MonkeyData.Monkeys.Count)).Name;
-        //            break;
-        //        case "beardetails":
-        //            animalName = BearData.Bears.ElementAt(rand.Next(0, BearData.Bears.Count)).Name;
-        //            break;
-        //        case "catdetails":
-        //            animalName = CatData.Cats.ElementAt(rand.Next(0, CatData.Cats.Count)).Name;
-        //            break;
-        //        case "dogdetails":
-        //            animalName = DogData.Dogs.ElementAt(rand.Next(0, DogData.Dogs.Count)).Name;
-        //            break;
-        //        case "elephantdetails":
-        //            animalName = ElephantData.Elephants.ElementAt(rand.Next(0, ElephantData.Elephants.Count)).Name;
-        //            break;
-        //    }
+       
 
         //    ShellNavigationState state = Shell.Current.CurrentState;
         //    await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={animalName}");
         //    Shell.Current.FlyoutIsPresented = false;
-        //}
 
         void OnNavigating(object sender, ShellNavigatingEventArgs e)
         {

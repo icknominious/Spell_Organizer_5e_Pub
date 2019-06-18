@@ -21,7 +21,7 @@ namespace Spell_Organizer_5E.Views
             Spells = await App.Database.GetSpellsbyClassAsync(ClassPicker.SelectedItem.ToString());
             SpellsByClassView.ItemsSource = Spells;
             ByClassSpellSearchHandler.Spells = Spells;
-            SortingPicker.SelectedIndex = 0;
+            OnSortingPickerSelectedIndexChanged(this, EventArgs.Empty);
         }
 
         void OnSortingPickerSelectedIndexChanged(object sender, EventArgs e)

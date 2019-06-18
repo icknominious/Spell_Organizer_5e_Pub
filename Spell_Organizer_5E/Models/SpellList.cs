@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SQLite;
 
 namespace Spell_Organizer_5E.Models
@@ -8,6 +9,15 @@ namespace Spell_Organizer_5E.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Name { get; set; }
-        //public IList<Spell> Spells { get; set; }
+        public DateTime Date { get; set; }
+        public static IList<Spell> Spells { get; set; }
+
+        public SpellList()
+        {
+            Name = "";
+            Date = DateTime.UtcNow;
+            Spells.Clear();
+
+        }
     }
 }

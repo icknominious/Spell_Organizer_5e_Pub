@@ -31,9 +31,61 @@
                                       ItemTemplate="{StaticResource AnimalSearchTemplate}"/>
     </Shell.SearchHandler>
 
-    <CollectionView x:Name="SpellsBySchoolView"
-                    Margin="20"
-                    ItemTemplate="{StaticResource SpellTemplate}"
-                    SelectionMode="Single"
-                    SelectionChanged="OnCollectionViewSelectionChanged" />
+    <Grid Margin="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.Column="0">
+            <Picker x:Name="SchoolPicker"
+                    Title="Select a School"
+                    TitleColor="WhiteSmoke"
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    BackgroundColor="DarkSlateGray"
+                    SelectedIndexChanged="OnSchoolPickerSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Abjuration</x:String>
+                        <x:String>Conjuration</x:String>
+                        <x:String>Divination</x:String>
+                        <x:String>Enchantment</x:String>
+                        <x:String>Envocation</x:String>
+                        <x:String>Illusion</x:String>
+                        <x:String>Necromancy</x:String>
+                        <x:String>Transmutation</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Grid.Row="0" Grid.Column="1">
+            <Picker x:Name="SortingPicker"
+                    Title="Sort By"
+                    TitleColor="WhiteSmoke"
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    BackgroundColor="DarkSlateGray"
+                    SelectedIndexChanged="OnSortingPickerSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Name (Ascending)</x:String>
+                        <x:String>Name (Descending)</x:String>
+                        <x:String>Level (Ascending)</x:String>
+                        <x:String>Level (Descending)</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <CollectionView x:Name="SpellsBySchoolView"
+                Margin="15"
+                ItemTemplate="{StaticResource SpellTemplate}"
+                SelectionMode="Single"
+                SelectionChanged="OnCollectionViewSelectionChanged" />
+        </StackLayout>
+    </Grid>
 </ContentPage>

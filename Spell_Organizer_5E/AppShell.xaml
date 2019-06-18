@@ -30,13 +30,19 @@
             <Setter Property="Shell.BackgroundColor" 
                     Value="DarkViolet" />
         </Style>
+        <Style x:Key="SpellListsShell"
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="DarkOrange" />
+        </Style>
         <Style x:Key="MonkeysShell" 
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor" 
                     Value="DarkCyan" />
         </Style>
-        <Style x:Key="ElephantsShell" 
+        <Style x:Key="HomeShell" 
                TargetType="Element" 
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor" 
@@ -117,7 +123,7 @@
     </Shell.MenuItemTemplate>-->
 
     <ShellContent Route="homepage"
-                      Style="{StaticResource ElephantsShell}"
+                      Style="{StaticResource HomeShell}"
                       Title="Home"
                       Icon="elephant.png"
                       ContentTemplate="{DataTemplate views:HomePage}" />
@@ -160,10 +166,10 @@
         </Tab>
 
         <ShellContent Route="spelllists"
-                      Style="{StaticResource BearsShell}"
+                      Style="{StaticResource SpellListsShell}"
                       Title="Spell Lists"
                       Icon="bear.png"
-                      ContentTemplate="{DataTemplate views:BearsPage}" />
+                      ContentTemplate="{DataTemplate views:SpellLists}" />
     </FlyoutItem>
     
     <ShellContent Route="about"

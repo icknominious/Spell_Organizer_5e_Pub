@@ -28,34 +28,74 @@
         </DataTemplate>
 
         <DataTemplate x:Key="SpellTemplate">
-          <Grid Padding="15" HorizontalOptions="FillAndExpand">
+          <Grid Padding="10" HorizontalOptions="FillAndExpand">
             <Grid.RowDefinitions>
-                <RowDefinition Height="40" />
+                <RowDefinition Height="35" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="0.5*" />
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
             <Label Grid.Column="0"
                     Text="{Binding Name}"
                     FontAttributes="Bold"
                     VerticalOptions="Center"/>
-                <Label Grid.Column="1"
+            <Label Grid.Column="1"
                     Text="{Binding Level}"
                     VerticalOptions="Center"
                     HorizontalOptions="Start" />
-                <Label Grid.Column="2"
+            <Label Grid.Column="2"
                     Text="{Binding School}"
                     FontAttributes="Italic"
                     VerticalOptions="Center" />
             <Label Grid.Column="3"
-                Text="{Binding Time}"
-                VerticalOptions="Center" />
-          </Grid>
+                    Text="{Binding Time}"
+                    VerticalOptions="Center" />
+            <Button x:Name="SpellButton"
+                    Grid.Column="4"
+                    Text="+"
+                    TextColor="WhiteSmoke"
+                    FontAttributes="Bold"
+                    BackgroundColor="DarkSlateGray"
+                    BorderRadius="5"
+                    BorderWidth="1"
+                    BorderColor="WhiteSmoke" />
+            </Grid>
         </DataTemplate>
-        
+
+        <DataTemplate x:Key="SpellListTemplate">
+            <Grid Padding="10" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                    Text="{Binding Name}"
+                    FontAttributes="Bold"
+                    VerticalOptions="Center"/>
+                <Label Grid.Column="1"
+                    Text="{Binding Date}"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start" />
+                <Button x:Name="SpellListButton"
+                    Grid.Column="2"
+                    Text="Load"
+                    TextColor="WhiteSmoke"
+                    FontAttributes="Bold"
+                    BackgroundColor="DarkSlateGray"
+                    BorderRadius="5"
+                    BorderWidth="1"
+                    BorderColor="WhiteSmoke" />
+            </Grid>
+        </DataTemplate>
+
         <DataTemplate x:Key="AnimalSearchTemplate">
             <Grid Padding="10">
                 <Grid.ColumnDefinitions>

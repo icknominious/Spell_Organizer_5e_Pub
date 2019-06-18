@@ -29,6 +29,13 @@ namespace Spell_Organizer_5E.Data
                             .ToListAsync();
         }
 
+        public Task<List<Spell>> GetSpellsbySchoolAsync(string spellSchool)
+        {
+            return _database.Table<Spell>()
+                            .Where(i => i.School.Contains(spellSchool))
+                            .ToListAsync();
+        }
+
         public Task<Spell> GetSpellAsync(string name)
         {
             return _database.Table<Spell>()

@@ -36,7 +36,7 @@ namespace Spell_Organizer_5E
                 {
                     defaultSpellList = new SpellList();
                     defaultSpellList.Name = "Default Spell List";
-                    _ = Database.SaveSpellListAsync(defaultSpellList);
+                    _ =  Database.SaveSpellListAsync(defaultSpellList);
                 }
                 return defaultSpellList;
             }

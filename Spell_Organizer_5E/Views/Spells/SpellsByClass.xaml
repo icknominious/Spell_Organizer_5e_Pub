@@ -84,7 +84,7 @@
         </StackLayout>
         <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <CollectionView x:Name="SpellsByClassView"
-                Margin="20"
+                Margin="15"
                 ItemTemplate="{StaticResource SpellTemplate}"
                 SelectionMode="Single"
                 SelectionChanged="OnCollectionViewSelectionChanged" />
