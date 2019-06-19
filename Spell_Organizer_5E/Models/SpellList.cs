@@ -17,7 +17,6 @@ namespace Spell_Organizer_5E.Models
             Name = "";
             Date = DateTime.UtcNow;
             Spells.Clear();
-
         }
     }
 }

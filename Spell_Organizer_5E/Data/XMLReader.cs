@@ -19,39 +19,66 @@ namespace Spell_Organizer_5E.Data
             };
 
             reader = XmlReader.Create(stream, settings);
+            //Spell otherSpell = new Spell(); await App.Database.GetSpellAsync(spell.Name);
 
-            Spell spell = new Spell();
-
-            while (await reader.ReadAsync())
+            while (/*reader.NodeType != XmlNodeType.None &&*/ reader.Read())
             {
-                try
+                if (reader.NodeType == XmlNodeType.Element)
                 {
+                    Spell spell = new Spell();
                     _ = reader.ReadToFollowing("name");
-                    Console.WriteLine(spell.Name=reader.ReadElementContentAsString("name", ""));
-                    Spell otherSpell = await App.Database.GetSpellAsync(spell.Name);
-                    if (otherSpell == null)
+                    Console.WriteLine(spell.Name = reader.ReadElementContentAsString("name", ""));
+                    if (await App.Database.GetSpellAsync(spell.Name) == null)
                     {
-                        _ = reader.ReadToFollowing("level");
-                        Console.WriteLine(spell.Level = reader.ReadElementContentAsInt("level", ""));
-                        _ = reader.ReadToFollowing("school");
-                        Console.WriteLine(spell.School = reader.ReadElementContentAsString("school", ""));
-                        _ = reader.ReadToFollowing("time");
-                        Console.WriteLine(spell.Time = reader.ReadElementContentAsString("time", ""));
-                        _ = reader.ReadToFollowing("range");
-                        Console.WriteLine(spell.Range = reader.ReadElementContentAsString("range", ""));
-                        _ = reader.ReadToFollowing("components");
-                        Console.WriteLine(spell.Components = reader.ReadElementContentAsString("components", ""));
-                        _ = reader.ReadToFollowing("duration");
-                        Console.WriteLine(spell.Duration = reader.ReadElementContentAsString("duration", ""));
-                        _ = reader.ReadToFollowing("classes");
-                        Console.WriteLine(spell.Classes = reader.ReadElementContentAsString("classes", ""));
-                        while (reader.Read() && reader.Name == "text")
-                            spell.Text += reader.ReadElementContentAsString("text", "");
+                        while (reader.NodeType != XmlNodeType.EndElement)
+                        {
+                            switch (reader.Name)
+                            {
+                                case "level":
+                                    //_ = reader.ReadToFollowing("level");
+                                    Console.WriteLine(spell.Level = reader.ReadElementContentAsInt("level", ""));
+                                    break;
+                                case "school":
+                                    //_ = reader.ReadToFollowing("school");
+                                    Console.WriteLine(spell.School = reader.ReadElementContentAsString("school", ""));
+                                    break;
+                                case "ritual":
+                                    //_ = reader.ReadToFollowing("ritual");
+                                    Console.WriteLine(spell.School = reader.ReadElementContentAsString("ritual", ""));
+                                    break;
+                                case "time":
+                                    //_ = reader.ReadToFollowing("time");
+                                    Console.WriteLine(spell.Time = reader.ReadElementContentAsString("time", ""));
+                                    break;
+                                case "range":
+                                    //_ = reader.ReadToFollowing("range");
+                                    Console.WriteLine(spell.Range = reader.ReadElementContentAsString("range", ""));
+                                    break;
+                                case "components":
+                                    //_ = reader.ReadToFollowing("components");
+                                    Console.WriteLine(spell.Components = reader.ReadElementContentAsString("components", ""));
+                                    break;
+                                case "duration":
+                                    //_ = reader.ReadToFollowing("duration");
+                                    Console.WriteLine(spell.Duration = reader.ReadElementContentAsString("duration", ""));
+                                    break;
+                                case "classes":
+                                    //_ = reader.ReadToFollowing("classes");
+                                    Console.WriteLine(spell.Classes = reader.ReadElementContentAsString("classes", ""));
+                                    break;
+                                case "text":
+                                    //_ = reader.ReadToFollowing("text");
+                                    Console.WriteLine(spell.Text += reader.ReadElementContentAsString("text", ""));
+                                    break;
+                            }
+                            reader.Read();
+                        }
                         await App.Database.SaveSpellAsync(spell);
-
                     }
+                    else
+                        break;
                 }
-                catch (XmlException) { /*Do nothing. Last read operation will find nothing and throw an exception*/};
+                
             }
             Console.WriteLine("Done reading XML files");
         }

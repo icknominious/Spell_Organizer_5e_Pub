@@ -8,6 +8,7 @@ namespace Spell_Organizer_5E.Models
         public string Name { get; set; }
         public int Level { get; set; }
         public string School { get; set; }
+        public string Ritual { get; set; }
         public string Time { get; set; }
         public string Range { get; set; }
         public string Components { get; set; }
