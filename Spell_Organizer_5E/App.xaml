@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Spell_Organizer_5E.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Spell_Organizer_5E.App" x:Name="AppBase">
     <Application.Resources>
         <DataTemplate x:Key="AnimalTemplate">
             <Grid Padding="10">
@@ -55,6 +55,8 @@
                     Text="{Binding Time}"
                     VerticalOptions="Center" />
             <Button x:Name="SpellButton"
+                    Pressed="SpellButton_Pressed"
+                    CommandParameter="{Binding Name}"
                     Grid.Column="4"
                     Text="+"
                     TextColor="WhiteSmoke"
@@ -62,31 +64,26 @@
                     BackgroundColor="DarkSlateGray"
                     BorderRadius="5"
                     BorderWidth="1"
-                    BorderColor="WhiteSmoke" />
+                    BorderColor="WhiteSmoke"/>
             </Grid>
         </DataTemplate>
 
         <DataTemplate x:Key="SpellListTemplate">
             <Grid Padding="10" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="35" />
+                    <RowDefinition Height="40" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="1.5*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0"
                     Text="{Binding Name}"
                     FontAttributes="Bold"
                     VerticalOptions="Center"/>
-                <Label Grid.Column="1"
-                    Text="{Binding Date}"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Start" />
                 <Button x:Name="SpellListButton"
                     Grid.Column="2"
-                    Text="Load"
+                    Text="Activate"
                     TextColor="WhiteSmoke"
                     FontAttributes="Bold"
                     BackgroundColor="DarkSlateGray"

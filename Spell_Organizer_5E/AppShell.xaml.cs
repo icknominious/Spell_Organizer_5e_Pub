@@ -9,14 +9,10 @@ namespace Spell_Organizer_5E
 {
     public partial class AppShell : Shell
     {
-        //Random rand = new Random();
         Dictionary<string, Type> routes = new Dictionary<string, Type>();
         public Dictionary<string, Type> Routes { get { return routes; } }
 
         public ICommand HelpCommand => new Command<string>((url) => Device.OpenUri(new Uri(url)));
-        //public ICommand RandomPageCommand => new Command(async () => await NavigateToRandomPageAsync());
-
-        XMLReader myReader = new XMLReader();
 
         public AppShell()
         {

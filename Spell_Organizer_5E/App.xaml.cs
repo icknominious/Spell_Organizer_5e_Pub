@@ -2,9 +2,9 @@
 using Spell_Organizer_5E.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Collections.Generic;
 using System.IO;
 using System;
+using System.Windows.Input;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Spell_Organizer_5E
@@ -12,8 +12,7 @@ namespace Spell_Organizer_5E
     public partial class App : Application
     {
         static SODatabase database;
-        static SpellList defaultSpellList;
-        //public static IList<Spell> Spells { get; set; }
+        public static SpellList activeSpellList;
 
         readonly XMLReader myReader = new XMLReader();
         public static SODatabase Database
@@ -28,20 +27,6 @@ namespace Spell_Organizer_5E
             }
         }
 
-        public static SpellList SpellList
-        {
-            get
-            {
-                if (defaultSpellList == null)
-                {
-                    defaultSpellList = new SpellList();
-                    defaultSpellList.Name = "Default Spell List";
-                    _ =  Database.SaveSpellListAsync(defaultSpellList);
-                }
-                return defaultSpellList;
-            }
-        }
-
         public App()
         {
             LoadData();
@@ -53,8 +38,7 @@ namespace Spell_Organizer_5E
         private async void LoadData()
         {
             await myReader.ReadFileAsync();
-            //Spells = Database.GetSpellsAsync().Result;
-    }
+        }
 
         protected override void OnStart()
         {
@@ -69,6 +53,15 @@ namespace Spell_Organizer_5E
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        private void SpellButton_Pressed(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
+            activeSpellList.Spells+=(spell.Name)+", ";
+            Console.WriteLine(activeSpellList.Spells);
+            
         }
     }
 }

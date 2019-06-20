@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Xamarin.Forms;
 using Spell_Organizer_5E.Models;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ namespace Spell_Organizer_5E.Views
             AllSpellsView.ItemsSource = Spells; //workaround 
             AllSpellSearchHandler.Spells = Spells;
         }
+
+ 
 
         //protected override async void OnAppearing()                       //doesnt work, xamarin bug
         //{
