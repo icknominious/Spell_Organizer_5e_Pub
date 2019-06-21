@@ -80,16 +80,21 @@ namespace Spell_Organizer_5E.Data
             return _database.Table<SpellList>().ToListAsync();
         }
 
-        public Task<SpellList> GetSpellListAsync(int id)
+        public Task<SpellList> GetSpellListAsync(string name)
         {
             return _database.Table<SpellList>()
-                            .Where(i => i.ID == id)
+                            .Where(i => i.Name == name)
                             .FirstOrDefaultAsync();
         }  
      
-        public Task<int> SaveSpellListAsync(SpellList SpellList)
+        public Task<string> SaveSpellListAsync(SpellList SpellList)
         {
-            return SpellList.ID != 0 ? _database.UpdateAsync(SpellList) : _database.InsertAsync(SpellList);
+            if (App.Database.GetSpellAsync(SpellList.Name).Result == null)
+                _database.InsertAsync(SpellList);
+            else
+                _database.UpdateAsync(SpellList);
+            return Task.FromResult(SpellList.Name);
+            //return SpellList.ID != 0 ? _database.UpdateAsync(SpellList) : _database.InsertAsync(SpellList);
         }
      
         public Task<int> DeleteSpellListAsync(SpellList SpellList)

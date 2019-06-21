@@ -6,8 +6,7 @@ namespace Spell_Organizer_5E.Models
 {
     public class SpellList
     {
-        [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        [PrimaryKey]
         public string Name { get; set; }
         public string Spells { get; set; }
     }

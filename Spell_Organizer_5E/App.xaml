@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Spell_Organizer_5E.App" x:Name="AppBase">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Spell_Organizer_5E.Controls" x:Class="Spell_Organizer_5E.App" x:Name="AppBase">
     <Application.Resources>
         <DataTemplate x:Key="AnimalTemplate">
             <Grid Padding="10">
@@ -39,32 +40,43 @@
                 <ColumnDefinition Width="1.5*" />
                 <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-            <Label Grid.Column="0"
-                    Text="{Binding Name}"
-                    FontAttributes="Bold"
-                    VerticalOptions="Center"/>
-            <Label Grid.Column="1"
-                    Text="{Binding Level}"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Start" />
-            <Label Grid.Column="2"
-                    Text="{Binding School}"
-                    FontAttributes="Italic"
-                    VerticalOptions="Center" />
-            <Label Grid.Column="3"
-                    Text="{Binding Time}"
-                    VerticalOptions="Center" />
-            <Button x:Name="SpellButton"
-                    Pressed="SpellButton_Pressed"
-                    CommandParameter="{Binding Name}"
-                    Grid.Column="4"
-                    Text="+"
-                    TextColor="WhiteSmoke"
-                    FontAttributes="Bold"
-                    BackgroundColor="DarkSlateGray"
-                    BorderRadius="5"
-                    BorderWidth="1"
-                    BorderColor="WhiteSmoke"/>
+                <Label Grid.Column="0"
+                        Text="{Binding Name}"
+                        FontAttributes="Bold"
+                        VerticalOptions="Center"/>
+                <Label Grid.Column="1"
+                        Text="{Binding Level}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start" />
+                <Label Grid.Column="2"
+                        Text="{Binding School}"
+                        FontAttributes="Italic"
+                        VerticalOptions="Center" />
+                <Label Grid.Column="3"
+                        Text="{Binding Time}"
+                        VerticalOptions="Center" />
+                <controls:ToggleButton Grid.Column="4"
+                                       Toggled="SpellButton_Toggled" 
+                                       CommandParameter="{Binding Name}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="ToggleStates">
+                            <VisualState Name="ToggledOff">
+                                <VisualState.Setters>
+                                    <Setter Property="Text" Value="Add" />
+                                    <Setter Property="BackgroundColor" Value="#C0C0C0" />
+                                    <Setter Property="TextColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState Name="ToggledOn">
+                                <VisualState.Setters>
+                                    <Setter Property="Text" Value="Remove" />
+                                    <Setter Property="BackgroundColor" Value="#404040" />
+                                    <Setter Property="TextColor" Value="White" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </controls:ToggleButton>
             </Grid>
         </DataTemplate>
 

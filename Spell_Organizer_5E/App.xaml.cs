@@ -12,6 +12,7 @@ namespace Spell_Organizer_5E
     public partial class App : Application
     {
         static SODatabase database;
+        private SpellList defaultSpellList;
         public static SpellList activeSpellList;
 
         readonly XMLReader myReader = new XMLReader();
@@ -27,17 +28,27 @@ namespace Spell_Organizer_5E
             }
         }
 
+        SpellList LoadDefaultSpellList()
+        {
+            if (defaultSpellList == null)
+            {
+                defaultSpellList = new SpellList { Name = "Default Spell List" };
+                _ = App.Database.SaveSpellListAsync(defaultSpellList);
+            }
+            return defaultSpellList;
+        }
+
         public App()
         {
             LoadData();
             InitializeComponent();
-
             MainPage = new AppShell();
         }
 
         private async void LoadData()
         {
             await myReader.ReadFileAsync();
+            activeSpellList = LoadDefaultSpellList();
         }
 
         protected override void OnStart()
@@ -55,13 +66,24 @@ namespace Spell_Organizer_5E
             // Handle when your app resumes
         }
 
-        private void SpellButton_Pressed(object sender, EventArgs e)
+        private async void SpellButton_Toggled(object sender, ToggledEventArgs e)
         {
-            Button button = (Button)sender;
-            Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
-            activeSpellList.Spells+=(spell.Name)+", ";
-            Console.WriteLine(activeSpellList.Spells);
-            
+            if (e.Value)
+            {
+                Button button = (Button)sender;
+                Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
+                activeSpellList.Spells += (spell.Name) + ", ";
+                await database.SaveSpellListAsync(activeSpellList);
+                Console.WriteLine(activeSpellList.Spells);
+            }
+            else
+            {
+                Button button = (Button)sender;
+                Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
+                activeSpellList.Spells = activeSpellList.Spells.Replace(spell.Name + ", ", "");
+                await database.SaveSpellListAsync(activeSpellList);
+                Console.WriteLine(activeSpellList.Spells);
+            }
         }
     }
 }

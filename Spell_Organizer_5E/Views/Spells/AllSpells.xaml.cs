@@ -1,29 +1,26 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Xamarin.Forms;
 using Spell_Organizer_5E.Models;
 using System.Collections.Generic;
+using System;
 
 namespace Spell_Organizer_5E.Views
 {
     public partial class AllSpells : ContentPage
     {
         private IList<Spell> Spells = App.Database.GetSpellsAsync().Result;
+
         public AllSpells()
         {
             InitializeComponent();
-            AllSpellsView.ItemsSource = Spells; //workaround 
+            AllSpellsView.ItemsSource = Spells; 
             AllSpellSearchHandler.Spells = Spells;
         }
 
- 
-
-        //protected override async void OnAppearing()                       //doesnt work, xamarin bug
-        //{
-        //    base.OnAppearing();
-
-        //    //AllSpellsView.ItemsSource = await App.Database.GetSpellsAsync();
-        //}
+        protected override void OnAppearing()                       
+        {
+            base.OnAppearing();
+        }
 
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
