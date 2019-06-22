@@ -17,6 +17,16 @@ namespace Spell_Organizer_5E.Controls
         public ToggleButton()
         {
             Clicked += (sender, args) => IsToggled ^= true;
+
+            //MessagingCenter.Subscribe<App, string>(this, "UpdateButton", (sender, arg) => {
+            //    Label spellLabel = (Label)this.Parent.FindByName("SpellName");
+
+            //    if (spellLabel.Text == arg)
+            //    {
+            //        //like put stuff here
+            //        //Console.WriteLine(spellLabel.Text);
+            //    }                  
+            //});
         }
 
         public bool IsToggled

@@ -50,6 +50,7 @@ namespace Spell_Organizer_5E
             //{
             //    e.Cancel();
             //}
+            
         }
 
         void OnNavigated(object sender, ShellNavigatedEventArgs e)

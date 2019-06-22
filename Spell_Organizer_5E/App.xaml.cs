@@ -74,7 +74,8 @@ namespace Spell_Organizer_5E
                 Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
                 activeSpellList.Spells += (spell.Name) + ", ";
                 await database.SaveSpellListAsync(activeSpellList);
-                Console.WriteLine(activeSpellList.Spells);
+                //Console.WriteLine(activeSpellList.Spells);
+                //MessagingCenter.Send(this, "UpdateButton", spell.Name);
             }
             else
             {
@@ -82,7 +83,8 @@ namespace Spell_Organizer_5E
                 Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
                 activeSpellList.Spells = activeSpellList.Spells.Replace(spell.Name + ", ", "");
                 await database.SaveSpellListAsync(activeSpellList);
-                Console.WriteLine(activeSpellList.Spells);
+                //Console.WriteLine(activeSpellList.Spells);
+                //MessagingCenter.Send(this, "UpdateButton", spell.Name);
             }
         }
     }
