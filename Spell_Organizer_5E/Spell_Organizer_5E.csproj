@@ -17,9 +17,6 @@
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="Views\Spells\SpellsBySchool.xaml.cs">
       <DependentUpon>SpellsBySchool.xaml</DependentUpon>
     </Compile>

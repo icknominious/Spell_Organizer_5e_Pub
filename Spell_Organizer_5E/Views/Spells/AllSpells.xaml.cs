@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Xamarin.Forms;
 using Spell_Organizer_5E.Models;
+using Spell_Organizer_5E.ViewModels;
 using System.Collections.Generic;
 using System;
 
@@ -13,6 +14,7 @@ namespace Spell_Organizer_5E.Views
         public AllSpells()
         {
             InitializeComponent();
+            //BindingContext = new SpellsViewModel(); beta code
             AllSpellsView.ItemsSource = Spells; 
             AllSpellSearchHandler.Spells = Spells;
         }
