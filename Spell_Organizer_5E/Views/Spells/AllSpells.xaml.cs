@@ -1,9 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Spell_Organizer_5E.Models;
 using Spell_Organizer_5E.ViewModels;
-using System.Collections.Generic;
-using System;
 
 namespace Spell_Organizer_5E.Views
 {

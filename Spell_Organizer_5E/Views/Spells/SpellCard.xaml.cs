@@ -8,11 +8,19 @@ namespace Spell_Organizer_5E.Views
     {
         public string Name
         {
-            set => BindingContext = App.Database.GetSpellAsync(Uri.UnescapeDataString(value)).Result; //CatData.Cats.FirstOrDefault(m => m.Name == Uri.UnescapeDataString(value));
+            set => BindingContext = App.Database.GetSpellAsync(Uri.UnescapeDataString(value)).Result;
         }
+
         public SpellCard()
         {
             InitializeComponent();
+
+            ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
+                AddButton.TranslationY = e.ScrollY;
+            };
+            ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
+                RemoveButton.TranslationY = e.ScrollY;
+            };
         }
 
         protected override bool OnBackButtonPressed()

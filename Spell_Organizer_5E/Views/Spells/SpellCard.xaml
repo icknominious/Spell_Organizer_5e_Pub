@@ -5,8 +5,8 @@
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False"
              BackgroundColor = "#313a3f">
-    <ScrollView>
-        <StackLayout Margin="20">
+    <ScrollView x:Name="ScrollView">
+        <RelativeLayout Margin="20">
             <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -32,22 +32,27 @@
                 </StackLayout>
                 <StackLayout x:Name="Level" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="1">
                     <Label Text="{Binding Level}" 
+                           HorizontalOptions="Center"
                            Style="{DynamicResource BodyStyle}" />
                 </StackLayout>
                 <StackLayout x:Name="Time" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="0">
                     <Label Text="{Binding Time}" 
+                           HorizontalOptions="Center"
                            Style="{DynamicResource BodyStyle}" />
                 </StackLayout>
                 <StackLayout x:Name="Range" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="1">
                     <Label Text="{Binding Range}" 
+                           HorizontalOptions="Center"
                            Style="{DynamicResource BodyStyle}" />
                 </StackLayout>
                 <StackLayout x:Name="Components" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="0">
                     <Label Text="{Binding Components}" 
+                           HorizontalOptions="Center"
                            Style="{DynamicResource BodyStyle}" />
                 </StackLayout>
                 <StackLayout x:Name="Duration" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="1">
                     <Label Text="{Binding Duration}" 
+                           HorizontalOptions="Center"
                            Style="{DynamicResource BodyStyle}" />
                 </StackLayout>
                 <StackLayout x:Name="Text" BackgroundColor="DarkSlateBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
@@ -59,6 +64,22 @@
                            Style="{DynamicResource BodyStyle}" />
                 </StackLayout>
             </Grid>
-        </StackLayout>
+            <Button Text="+"
+                    x:Name="AddButton"
+                    CornerRadius="90"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-120}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-80}"
+                    />
+            <Button Text="-"
+                    x:Name="RemoveButton"
+                    CornerRadius="90"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-55}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-80}"
+                    />
+        </RelativeLayout>
     </ScrollView>
 </ContentPage>

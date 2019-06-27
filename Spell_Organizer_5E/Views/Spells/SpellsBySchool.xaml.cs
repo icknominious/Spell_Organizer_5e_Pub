@@ -1,8 +1,9 @@
-﻿using System.Linq;
-using System;
+﻿using System;
+using System.Linq;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Spell_Organizer_5E.Models;
-using System.Collections.Generic;
+using Spell_Organizer_5E.ViewModels;
 
 namespace Spell_Organizer_5E.Views
 {
@@ -12,7 +13,7 @@ namespace Spell_Organizer_5E.Views
         public SpellsBySchool()
         {
             InitializeComponent();
-            SpellsBySchoolView.ItemsSource = Spells;  //workaround
+            SpellsBySchoolView.ItemsSource = Spells; 
             BySchoolSpellSearchHandler.Spells = Spells;
         }
 
@@ -37,11 +38,8 @@ namespace Spell_Organizer_5E.Views
             SpellsBySchoolView.ItemsSource = sortedList;
         }
 
-        //protected override async void OnAppearing()                               //doesnt work, Xamarin bug
+        //protected override async void OnAppearing()                           
         //{
-        //    base.OnAppearing();
-
-        //    //SpellsBySchoolView.ItemsSource = await App.Database.GetSpellsAsync();
         //}
 
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)

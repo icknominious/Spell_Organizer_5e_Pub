@@ -66,26 +66,26 @@ namespace Spell_Organizer_5E
             // Handle when your app resumes
         }
 
-        private async void SpellButton_Toggled(object sender, ToggledEventArgs e)
-        {
-            if (e.Value)
-            {
-                Button button = (Button)sender;
-                Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
-                activeSpellList.Spells += (spell.Name) + ", ";
-                await database.SaveSpellListAsync(activeSpellList);
-                //Console.WriteLine(activeSpellList.Spells);
-                //MessagingCenter.Send(this, "UpdateButton", spell.Name);
-            }
-            else
-            {
-                Button button = (Button)sender;
-                Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
-                activeSpellList.Spells = activeSpellList.Spells.Replace(spell.Name + ", ", "");
-                await database.SaveSpellListAsync(activeSpellList);
-                //Console.WriteLine(activeSpellList.Spells);
-                //MessagingCenter.Send(this, "UpdateButton", spell.Name);
-            }
-        }
+        //private async void SpellButton_Toggled(object sender, ToggledEventArgs e)
+        //{
+        //    if (e.Value)
+        //    {
+        //        Button button = (Button)sender;
+        //        Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
+        //        activeSpellList.Spells += (spell.Name) + ", ";
+        //        await database.SaveSpellListAsync(activeSpellList);
+        //        //Console.WriteLine(activeSpellList.Spells);
+        //        //MessagingCenter.Send(this, "UpdateButton", spell.Name);
+        //    }
+        //    else
+        //    {
+        //        Button button = (Button)sender;
+        //        Spell spell = database.GetSpellAsync(button.CommandParameter.ToString()).Result;
+        //        activeSpellList.Spells = activeSpellList.Spells.Replace(spell.Name + ", ", "");
+        //        await database.SaveSpellListAsync(activeSpellList);
+        //        //Console.WriteLine(activeSpellList.Spells);
+        //        //MessagingCenter.Send(this, "UpdateButton", spell.Name);
+        //    }
+        //}
     }
 }

@@ -10,11 +10,15 @@ namespace Spell_Organizer_5E.ViewModels
 {
     public class SpellsViewModel
     {
-        public IList<Spell> SpellListMV = App.Database.GetSpellsAsync().Result;
-        
-        public SpellsViewModel()
+        static public IList<Spell> SpellListMV = App.Database.GetSpellsAsync().Result; 
+        SpellsViewModel()
         {
-            
+            //foreach (Spell spell in SpellListMV)
+            //{
+            //    if (App.activeSpellList.Spells.Contains(spell.Name))
+            //    {
+            //    }
+            //}
         }
     }
 }

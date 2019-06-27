@@ -38,8 +38,7 @@
                 <ColumnDefinition Width="0.5*" />
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1.5*" />
-                <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" x:Name="SpellName"
                         Text="{Binding Name}"
                         FontAttributes="Bold"
@@ -55,7 +54,7 @@
                 <Label Grid.Column="3"
                         Text="{Binding Time}"
                         VerticalOptions="Center" />
-                <controls:ToggleButton Grid.Column="4"
+                <!--<controls:ToggleButton Grid.Column="4"
                                        Toggled="SpellButton_Toggled" 
                                        CommandParameter="{Binding Name}">
                     <VisualStateManager.VisualStateGroups>
@@ -76,7 +75,7 @@
                             </VisualState>
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
-                </controls:ToggleButton>
+                </controls:ToggleButton>-->
             </Grid>
         </DataTemplate>
 
