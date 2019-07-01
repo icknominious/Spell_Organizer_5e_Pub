@@ -12,7 +12,7 @@ namespace Spell_Organizer_5E
     public partial class App : Application
     {
         static SODatabase database;
-        private SpellList defaultSpellList;
+        static SpellList defaultSpellList;
         public static SpellList activeSpellList;
 
         readonly XMLReader myReader = new XMLReader();
@@ -28,14 +28,24 @@ namespace Spell_Organizer_5E
             }
         }
 
-        SpellList LoadDefaultSpellList()
+        public static SpellList DefaultSpellList
         {
-            if (defaultSpellList == null)
+            get
             {
-                defaultSpellList = new SpellList { Name = "Default Spell List" };
-                _ = App.Database.SaveSpellListAsync(defaultSpellList);
+                defaultSpellList = App.Database.GetSpellListAsync("Default Spell List").Result;
+
+                if (defaultSpellList != null)
+                {
+                    _ = App.Database.SaveSpellListAsync(defaultSpellList);
+                }
+                else
+                {
+                    defaultSpellList = new SpellList { Name = "Default Spell List" };
+                    _ = App.Database.SaveSpellListAsync(defaultSpellList);
+                }
+
+                return defaultSpellList;
             }
-            return defaultSpellList;
         }
 
         public App()
@@ -48,7 +58,7 @@ namespace Spell_Organizer_5E
         private async void LoadData()
         {
             await myReader.ReadFileAsync();
-            activeSpellList = LoadDefaultSpellList();
+            activeSpellList = DefaultSpellList;
         }
 
         protected override void OnStart()

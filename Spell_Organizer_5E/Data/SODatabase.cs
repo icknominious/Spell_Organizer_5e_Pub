@@ -85,11 +85,11 @@ namespace Spell_Organizer_5E.Data
             return _database.Table<SpellList>()
                             .Where(i => i.Name == name)
                             .FirstOrDefaultAsync();
-        }  
-     
+        }
+
         public Task<string> SaveSpellListAsync(SpellList SpellList)
         {
-            if (App.Database.GetSpellAsync(SpellList.Name).Result == null)
+            if (App.Database.GetSpellListAsync(SpellList.Name).Result == null)
                 _database.InsertAsync(SpellList);
             else
                 _database.UpdateAsync(SpellList);

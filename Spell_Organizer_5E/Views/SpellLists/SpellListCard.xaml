@@ -1,0 +1,71 @@
+﻿<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="Spell_Organizer_5E.Views.SpellListCard">
+    <CarouselPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage>
+                <ScrollView x:Name="ScrollView">
+                    <RelativeLayout Margin="20">
+                        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout x:Name="SpellName" BackgroundColor="DarkSlateBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label Text="{Binding Name}" 
+                           HorizontalOptions="Center" 
+                           Style="{DynamicResource TitleStyle}" />
+                            </StackLayout>
+                            <StackLayout x:Name="School" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="0">
+                                <Label Text="{Binding School}" 
+                           FontAttributes="Italic" 
+                           HorizontalOptions="Center" />
+                            </StackLayout>
+                            <StackLayout x:Name="Level" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="1">
+                                <Label Text="{Binding Level}" 
+                           HorizontalOptions="Center"
+                           Style="{DynamicResource BodyStyle}" />
+                            </StackLayout>
+                            <StackLayout x:Name="Time" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="0">
+                                <Label Text="{Binding Time}" 
+                           HorizontalOptions="Center"
+                           Style="{DynamicResource BodyStyle}" />
+                            </StackLayout>
+                            <StackLayout x:Name="Range" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="1">
+                                <Label Text="{Binding Range}" 
+                           HorizontalOptions="Center"
+                           Style="{DynamicResource BodyStyle}" />
+                            </StackLayout>
+                            <StackLayout x:Name="Components" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="0">
+                                <Label Text="{Binding Components}" 
+                           HorizontalOptions="Center"
+                           Style="{DynamicResource BodyStyle}" />
+                            </StackLayout>
+                            <StackLayout x:Name="Duration" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="1">
+                                <Label Text="{Binding Duration}" 
+                           HorizontalOptions="Center"
+                           Style="{DynamicResource BodyStyle}" />
+                            </StackLayout>
+                            <StackLayout x:Name="Text" BackgroundColor="DarkSlateBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label Text="{Binding Text}" 
+                           Style="{DynamicResource BodyStyle}" />
+                            </StackLayout>
+                            <StackLayout x:Name="Classes" BackgroundColor="DarkSlateBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                                <Label Text="{Binding Classes}" 
+                           Style="{DynamicResource BodyStyle}" />
+                            </StackLayout>
+                        </Grid>
+                    </RelativeLayout>
+                </ScrollView>
+            </ContentPage>
+        </DataTemplate>
+    </CarouselPage.ItemTemplate>
+</CarouselPage>

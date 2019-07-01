@@ -66,6 +66,8 @@
             </Grid>
             <Button Text="+"
                     x:Name="AddButton"
+                    Clicked="OnAddButtonClicked"
+                    CommandParameter="{Binding Name}"
                     CornerRadius="90"
                     WidthRequest="55"
                     HeightRequest="55"
@@ -74,6 +76,8 @@
                     />
             <Button Text="-"
                     x:Name="RemoveButton"
+                    Clicked="OnRemoveButtonClicked"
+                    CommandParameter="{Binding Name}"
                     CornerRadius="90"
                     WidthRequest="55"
                     HeightRequest="55"

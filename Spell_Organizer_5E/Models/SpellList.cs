@@ -9,5 +9,9 @@ namespace Spell_Organizer_5E.Models
         [PrimaryKey]
         public string Name { get; set; }
         public string Spells { get; set; }
+        public SpellList()
+        {
+            Spells = "";
+        }
     }
 }
