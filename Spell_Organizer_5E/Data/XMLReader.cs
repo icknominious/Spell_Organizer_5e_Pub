@@ -44,7 +44,7 @@ namespace Spell_Organizer_5E.Data
                                     break;
                                 case "ritual":
                                     //_ = reader.ReadToFollowing("ritual");
-                                    Console.WriteLine(spell.School = reader.ReadElementContentAsString("ritual", ""));
+                                    Console.WriteLine(spell.Ritual = reader.ReadElementContentAsString("ritual", ""));
                                     break;
                                 case "time":
                                     //_ = reader.ReadToFollowing("time");

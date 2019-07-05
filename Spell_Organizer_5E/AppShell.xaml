@@ -123,10 +123,11 @@
     </Shell.MenuItemTemplate>-->
 
     <ShellContent Route="homepage"
-                      Style="{StaticResource HomeShell}"
-                      Title="Home"
-                      Icon="elephant.png"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
+                  Style="{StaticResource HomeShell}"
+                  Title="Home"
+                  Icon="elephant.png"
+                  ContentTemplate="{DataTemplate views:HomePage}" 
+                  x:Name="Home"/>
 
     <FlyoutItem Route="menu"
                 Title="Menu"

@@ -15,12 +15,12 @@ namespace Spell_Organizer_5E.Views
         {
             InitializeComponent();
 
-            ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
-                AddButton.TranslationY = e.ScrollY;
-            };
-            ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
-                RemoveButton.TranslationY = e.ScrollY;
-            };
+            //ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
+            //    AddButton.TranslationY = e.ScrollY;
+            //};
+            //ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
+            //    RemoveButton.TranslationY = e.ScrollY;
+            //};
         }
 
         protected override bool OnBackButtonPressed()

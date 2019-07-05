@@ -26,6 +26,7 @@ namespace Spell_Organizer_5E
         {
             routes.Add("monkeydetails", typeof(MonkeyDetailPage));
             routes.Add("spelllists", typeof(SpellLists));
+            routes.Add("spelllistcards", typeof(SpellListCard));
             routes.Add("spellcards", typeof(SpellCard));
             routes.Add("dogdetails", typeof(DogDetailPage));
             routes.Add("elephantdetails", typeof(ElephantDetailPage));
@@ -43,18 +44,21 @@ namespace Spell_Organizer_5E
         //    await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={animalName}");
         //    Shell.Current.FlyoutIsPresented = false;
 
-        void OnNavigating(object sender, ShellNavigatingEventArgs e)
+        void OnNavigating(Object sender, ShellNavigatingEventArgs e)
         {
             // Cancel any back navigation
             //if (e.Source == ShellNavigationSource.Pop)
             //{
             //    e.Cancel();
             //}
+
             
         }
 
         void OnNavigated(object sender, ShellNavigatedEventArgs e)
         {
+            
         }
+
     }
 }

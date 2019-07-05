@@ -7,18 +7,12 @@ using Spell_Organizer_5E.Models;
 namespace Spell_Organizer_5E.Views
 {
     //[XamlCompilation(XamlCompilationOptions.Compile)]
-    [QueryProperty("Name", "name")]
     public partial class SpellListCard : CarouselPage
     {
-        public string Name
-        {
-            //set => BindingContext = App.Database.GetSpellAsync(Uri.UnescapeDataString(value)).Result;
-
-            set => BindingContext = SplitSpellList();
-        }
         public SpellListCard()
         {
             InitializeComponent();
+            ItemsSource = SplitSpellList();
         }
         protected override bool OnBackButtonPressed()
         {

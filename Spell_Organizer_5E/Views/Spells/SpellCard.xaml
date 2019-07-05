@@ -5,66 +5,117 @@
              Shell.NavBarIsVisible="False"
              Shell.TabBarIsVisible="False"
              BackgroundColor = "#313a3f">
-    <ScrollView x:Name="ScrollView">
-        <RelativeLayout Margin="20">
-            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <StackLayout x:Name="SpellName" BackgroundColor="DarkSlateBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Label Text="{Binding Name}" 
+    <RelativeLayout Margin="20">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout x:Name="SpellName" BackgroundColor="DarkSlateBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Text="{Binding Name}" 
                            HorizontalOptions="Center" 
                            Style="{DynamicResource TitleStyle}" />
-                </StackLayout>
-                <StackLayout x:Name="School" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="0">
-                    <Label Text="{Binding School}" 
+            </StackLayout>
+            <StackLayout x:Name="School" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="0">
+                <Label Text="{Binding School}" 
                            FontAttributes="Italic" 
                            HorizontalOptions="Center" />
-                </StackLayout>
-                <StackLayout x:Name="Level" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="1">
-                    <Label Text="{Binding Level}" 
-                           HorizontalOptions="Center"
-                           Style="{DynamicResource BodyStyle}" />
-                </StackLayout>
-                <StackLayout x:Name="Time" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="0">
-                    <Label Text="{Binding Time}" 
-                           HorizontalOptions="Center"
-                           Style="{DynamicResource BodyStyle}" />
-                </StackLayout>
-                <StackLayout x:Name="Range" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="1">
-                    <Label Text="{Binding Range}" 
-                           HorizontalOptions="Center"
-                           Style="{DynamicResource BodyStyle}" />
-                </StackLayout>
-                <StackLayout x:Name="Components" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="0">
-                    <Label Text="{Binding Components}" 
-                           HorizontalOptions="Center"
-                           Style="{DynamicResource BodyStyle}" />
-                </StackLayout>
-                <StackLayout x:Name="Duration" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="1">
-                    <Label Text="{Binding Duration}" 
-                           HorizontalOptions="Center"
-                           Style="{DynamicResource BodyStyle}" />
-                </StackLayout>
-                <StackLayout x:Name="Text" BackgroundColor="DarkSlateBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Label Text="{Binding Text}" 
-                           Style="{DynamicResource BodyStyle}" />
-                </StackLayout>
-                <StackLayout x:Name="Classes" BackgroundColor="DarkSlateBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Label Text="{Binding Classes}" 
-                           Style="{DynamicResource BodyStyle}" />
-                </StackLayout>
+            </StackLayout>
+            <Grid x:Name="Level" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="1">
+                <Label Text="Level: " 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                <Label Text="{Binding Level}" 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="0"
+                           Grid.Column="1"/>
             </Grid>
-            <Button Text="+"
+            <Grid x:Name="Time" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Text="Casting Time: " 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}"
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                <Label Text="{Binding Time}" 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+            </Grid>
+            <Grid x:Name="Range" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Text="Range: " 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                <Label Text="{Binding Range}" 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}"
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+            </Grid>
+            <Grid x:Name="Components" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Text="Components: " 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                <Label Text="{Binding Components}" 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+            </Grid>
+            <Grid x:Name="Duration" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Text="Duration: " 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="0"
+                           Grid.Column="0"/>
+                <Label Text="{Binding Duration}" 
+                           HorizontalOptions="Start"
+                           Style="{DynamicResource BodyStyle}" 
+                           Grid.Row="1"
+                           Grid.Column="0"/>
+            </Grid>
+            <ScrollView x:Name="Text" BackgroundColor="DarkSlateBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Text="{Binding Text}" 
+                       HorizontalOptions="CenterAndExpand"
+                       Style="{DynamicResource BodyStyle}" />
+            </ScrollView>
+            <StackLayout x:Name="Classes" BackgroundColor="DarkSlateBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Text="{Binding Classes}" 
+                       Style="{DynamicResource BodyStyle}" />
+            </StackLayout>
+        </Grid>
+        <Button Text="+"
                     x:Name="AddButton"
                     Clicked="OnAddButtonClicked"
                     CommandParameter="{Binding Name}"
@@ -72,9 +123,10 @@
                     WidthRequest="55"
                     HeightRequest="55"
                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-120}"
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-80}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-60}"
+                    Opacity="0.7"
                     />
-            <Button Text="-"
+        <Button Text="-"
                     x:Name="RemoveButton"
                     Clicked="OnRemoveButtonClicked"
                     CommandParameter="{Binding Name}"
@@ -82,8 +134,8 @@
                     WidthRequest="55"
                     HeightRequest="55"
                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=-55}"
-                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-80}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=-60}"
+                    Opacity="0.7"
                     />
-        </RelativeLayout>
-    </ScrollView>
+    </RelativeLayout>
 </ContentPage>
