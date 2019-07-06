@@ -28,12 +28,44 @@
         <controls:SpellSearchHandler  x:Name="AllSpellSearchHandler"
                                       Placeholder="Enter search term"
                                       ShowsResults="true"
-                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"/>
+                                      ItemTemplate="{StaticResource SpellSearchTemplate}"/>
     </Shell.SearchHandler>
 
-    <CollectionView x:Name="AllSpellsView"
+    <Grid Margin="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Row="0" Grid.Column="1">
+            <Picker x:Name="SortingPicker"
+                    Title="Sort By"
+                    TitleColor="WhiteSmoke"
+                    FontSize="16"
+                    TextColor="WhiteSmoke"
+                    BackgroundColor="DarkSlateGray"
+                    SelectedIndexChanged="OnSortingPickerSelectedIndexChanged">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Name (Ascending)</x:String>
+                        <x:String>Name (Descending)</x:String>
+                        <x:String>Level (Ascending)</x:String>
+                        <x:String>Level (Descending)</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <CollectionView x:Name="AllSpellsView"
                     Margin="20"
                     ItemTemplate="{StaticResource SpellTemplate}"
                     SelectionMode="Single"
                     SelectionChanged="OnCollectionViewSelectionChanged" />
+        </StackLayout>
+    </Grid>
+
+    
 </ContentPage>

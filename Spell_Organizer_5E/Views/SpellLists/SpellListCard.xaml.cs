@@ -28,5 +28,10 @@ namespace Spell_Organizer_5E.Views
 
             return SpellList;
         }
+
+        async void OnRemoveButtonClicked(object sender, EventArgs args)
+        {
+            //TODO
+        }
     }
 }

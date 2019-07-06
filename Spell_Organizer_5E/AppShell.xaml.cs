@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Spell_Organizer_5E.Data;
 using Spell_Organizer_5E.Views;
 
 namespace Spell_Organizer_5E
@@ -24,12 +23,9 @@ namespace Spell_Organizer_5E
 
         void RegisterRoutes()
         {
-            routes.Add("monkeydetails", typeof(MonkeyDetailPage));
-            routes.Add("spelllists", typeof(SpellLists));
+            //routes.Add("spelllists", typeof(SpellLists));
             routes.Add("spelllistcards", typeof(SpellListCard));
             routes.Add("spellcards", typeof(SpellCard));
-            routes.Add("dogdetails", typeof(DogDetailPage));
-            routes.Add("elephantdetails", typeof(ElephantDetailPage));
 
             foreach (var item in routes)
             {

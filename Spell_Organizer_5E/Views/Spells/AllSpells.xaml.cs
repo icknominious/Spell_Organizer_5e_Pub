@@ -29,5 +29,18 @@ namespace Spell_Organizer_5E.Views
             string spell = (e.CurrentSelection.FirstOrDefault() as Spell).Name;
             await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/allspells/spellcards?name={spell}");
         }
+
+        void OnSortingPickerSelectedIndexChanged(object sender, EventArgs e)
+        {
+            IEnumerable<Spell> sortedList = Spells;
+            switch (SortingPicker.SelectedIndex)
+            {
+                case 0: sortedList = Spells.OrderBy(spell => spell.Name); break;             //"Name (Ascending)"
+                case 1: sortedList = Spells.OrderByDescending(spell => spell.Name); break;  //"Name (Descending)"
+                case 2: sortedList = Spells.OrderBy(spell => spell.Level); break;           //"Level (Ascending)"
+                case 3: sortedList = Spells.OrderByDescending(spell => spell.Level); break;//"Level (Descending)"
+            }
+            AllSpellsView.ItemsSource = sortedList;
+        }
     }
 }

@@ -4,7 +4,7 @@
        xmlns:controls="clr-namespace:Spell_Organizer_5E.Controls"
        xmlns:views="clr-namespace:Spell_Organizer_5E.Views"
        FlyoutHeaderBehavior="CollapseOnScroll"
-       FlyoutBackgroundColor="#666666"
+       FlyoutBackgroundColor="#444444"
        Navigating="OnNavigating"
        Navigated="OnNavigated"
        x:Class="Spell_Organizer_5E.AppShell">
@@ -36,7 +36,7 @@
             <Setter Property="Shell.BackgroundColor" 
                     Value="DarkOrange" />
         </Style>
-        <Style x:Key="MonkeysShell" 
+        <Style x:Key="CharactersShell" 
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
             <Setter Property="Shell.BackgroundColor" 
@@ -48,12 +48,6 @@
             <Setter Property="Shell.BackgroundColor" 
                     Value="#ED3B3B" />
         </Style>
-        <Style x:Key="BearsShell" 
-               TargetType="Element" 
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor"
-                    Value="DarkOrange" />
-        </Style>
         <Style x:Key="AboutShell" 
                TargetType="Element" 
                BasedOn="{StaticResource BaseStyle}">
@@ -61,71 +55,16 @@
                     Value="#96d1ff" />
         </Style>       
     </Shell.Resources>
- 
+
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
     </Shell.FlyoutHeader>
-    
-    <!-- Template for FlyoutHeader -->
-    <!-- Not required, as the FlyoutHeader is set above -->
-    <!--<Shell.FlyoutHeaderTemplate>
-        <DataTemplate>
-            <Grid BackgroundColor="Black"
-                  HeightRequest="250">
-                <Image Aspect="AspectFill" 
-                       Source="dragonlogo.png" 
-                       Opacity="0.6" />
-                <Label Text="Spell Organizer" 
-                       TextColor="White" 
-                       FontAttributes="Bold" 
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center" />
-            </Grid>            
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>-->
-    
-    <!-- Template each FlyoutItem -->
-<!--    <Shell.ItemTemplate>
-        <DataTemplate>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.2*" />
-                    <ColumnDefinition Width="0.8*" />
-                </Grid.ColumnDefinitions>
-                <Image Source="{Binding Icon}"
-                       Margin="5"
-                       HeightRequest="45" />
-                <Label Grid.Column="1"
-                       Text="{Binding Title}"
-                       FontAttributes="Italic"
-                       VerticalTextAlignment="Center" /> 
-            </Grid>
-        </DataTemplate>
-    </Shell.ItemTemplate>-->
-    
-    <!-- Template each MenuItem -->
-<!--    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.2*" />
-                    <ColumnDefinition Width="0.8*" />
-                </Grid.ColumnDefinitions>
-                <Image Source="{Binding Icon}"
-                       Margin="5"
-                       HeightRequest="45" />
-                <Label Grid.Column="1"
-                       Text="{Binding Text}"
-                       FontAttributes="Italic"
-                       VerticalTextAlignment="Center" /> 
-            </Grid>
-        </DataTemplate>
-    </Shell.MenuItemTemplate>-->
+
 
     <ShellContent Route="homepage"
                   Style="{StaticResource HomeShell}"
                   Title="Home"
-                  Icon="elephant.png"
+                  Icon="Home.png"
                   ContentTemplate="{DataTemplate views:HomePage}" 
                   x:Name="Home"/>
 
@@ -134,42 +73,42 @@
                 FlyoutDisplayOptions="AsMultipleItems">
         <Tab Title="Characters"
              Route="characters"
-             Icon="paw.png">
+             Icon="character.png">
             <ShellContent Route="newcharacter"
-                          Style="{StaticResource MonkeysShell}"
+                          Style="{StaticResource CharactersShell}"
                           Title="New Character"
-                          Icon="monkey.png"
-                          ContentTemplate="{DataTemplate views:MonkeysPage}" />
+                          Icon="character.png"
+                          ContentTemplate="{DataTemplate views:ConstructionPage}" />
             <ShellContent Route="savedcharacter"
-                          Style="{StaticResource MonkeysShell}"
+                          Style="{StaticResource CharactersShell}"
                           Title="Saved Character"
-                          Icon="monkey.png"
-                          ContentTemplate="{DataTemplate views:MonkeysPage}" />
+                          Icon="character.png"
+                          ContentTemplate="{DataTemplate views:ConstructionPage}" />
         </Tab>
         <Tab Title="Spells"
              Route="spells"
-             Icon="paw.png">
+             Icon="Spells.png">
             <ShellContent Route="allspells"
                           Style="{StaticResource SpellShell}"
                           Title="All Spells"
-                          Icon="cat.png"
+                          Icon="Spells.png"
                           ContentTemplate="{DataTemplate views:AllSpells}" />
             <ShellContent Route="spellsbyclass"
                           Style="{StaticResource SpellShell}"
                           Title="Spells by Class"
-                          Icon="dog.png"
+                          Icon="Spells.png"
                           ContentTemplate="{DataTemplate views:SpellsByClass}" />
             <ShellContent Route="spellsbyschool"
                           Style="{StaticResource SpellShell}"
                           Title="Spells by School"
-                          Icon="dog.png"
+                          Icon="Spells.png"
                           ContentTemplate="{DataTemplate views:SpellsBySchool}" />
         </Tab>
 
         <ShellContent Route="spelllists"
                       Style="{StaticResource SpellListsShell}"
                       Title="Spell Lists"
-                      Icon="bear.png"
+                      Icon="Spell_list.png"
                       ContentTemplate="{DataTemplate views:SpellLists}" />
     </FlyoutItem>
     

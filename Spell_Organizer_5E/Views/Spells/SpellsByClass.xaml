@@ -28,7 +28,7 @@
         <controls:SpellSearchHandler  x:Name="ByClassSpellSearchHandler"
                                       Placeholder="Enter search term"
                                       ShowsResults="true"
-                                      ItemTemplate="{StaticResource AnimalSearchTemplate}"/>
+                                      ItemTemplate="{StaticResource SpellSearchTemplate}"/>
     </Shell.SearchHandler>
 
     <Grid Margin="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">

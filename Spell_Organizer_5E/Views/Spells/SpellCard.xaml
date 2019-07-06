@@ -6,7 +6,7 @@
              Shell.TabBarIsVisible="False"
              BackgroundColor = "#313a3f">
     <RelativeLayout Margin="20">
-        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
