@@ -6,6 +6,10 @@ using Xamarin.Forms;
 
 namespace Spell_Organizer_5E.Controls
 {
+    /// <summary>
+    /// Definitiion of modified Button class used for marking edits on spell lists
+    /// Currently not used
+    /// </summary>
     class ToggleButton : Button
     {
         public event EventHandler<ToggledEventArgs> Toggled;

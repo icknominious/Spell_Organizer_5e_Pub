@@ -6,9 +6,17 @@ using Spell_Organizer_5E.Models;
 
 namespace Spell_Organizer_5E.Data
 {
+    /// <summary>
+    /// XMLReader parses an XML file for all Spells and adds them to the DB,
+    /// only runs first time app is used or updated
+    /// </summary>
     class XMLReader
     {
         XmlReader reader;
+        /// <summary>
+        /// Continually parses XML fileline by line to build a Spell object and then adds it to the DB
+        /// </summary>
+        /// <returns>Task</returns>
         public async System.Threading.Tasks.Task ReadFileAsync()
         {
             var stream = await FileSystem.OpenAppPackageFileAsync("srd_spells.xml");
@@ -19,9 +27,8 @@ namespace Spell_Organizer_5E.Data
             };
 
             reader = XmlReader.Create(stream, settings);
-            //Spell otherSpell = new Spell(); await App.Database.GetSpellAsync(spell.Name);
 
-            while (/*reader.NodeType != XmlNodeType.None &&*/ reader.Read())
+            while ( reader.Read())                                                                  
             {
                 if (reader.NodeType == XmlNodeType.Element)
                 {

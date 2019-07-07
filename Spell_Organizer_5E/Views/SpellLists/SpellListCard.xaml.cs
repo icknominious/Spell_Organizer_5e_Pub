@@ -6,9 +6,15 @@ using Spell_Organizer_5E.Models;
 
 namespace Spell_Organizer_5E.Views
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    /// <summary>
+    /// Class for spells cards loaded from a spell list
+    /// </summary>
     public partial class SpellListCard : CarouselPage
     {
+        /// <summary>
+        /// Constructor, loads spells into CarouselPage template
+        /// </summary>
         public SpellListCard()
         {
             InitializeComponent();
@@ -19,6 +25,10 @@ namespace Spell_Organizer_5E.Views
             return base.OnBackButtonPressed();
         }
 
+        /// <summary>
+        /// Pulls spells param from the spell list and converts it from a csv string into a list of spells(class)
+        /// </summary>
+        /// <returns>IList<Spell></returns>
         public IList<Spell> SplitSpellList()
         {
             IList<Spell> SpellList = new List<Spell>();

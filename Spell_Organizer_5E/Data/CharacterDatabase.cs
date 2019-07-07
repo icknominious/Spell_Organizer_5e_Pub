@@ -5,6 +5,9 @@ using Spell_Organizer_5E.Models;
 
 namespace Character_Organizer_5E.Data
 {
+    /// <summary>
+    /// Character database template, currently unused
+    /// </summary>
     public class CharacterDatabase
     {
         readonly SQLiteAsyncConnection _database;

@@ -1,7 +1,6 @@
-﻿using Spell_Organizer_5E.Data;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Linq;
+
 
 namespace Spell_Organizer_5E.Views
 {

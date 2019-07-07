@@ -1,8 +1,10 @@
 ﻿using System;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Spell_Organizer_5E.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     [QueryProperty("Name", "name")]
     public partial class SpellCard : ContentPage
     {
@@ -20,7 +22,7 @@ namespace Spell_Organizer_5E.Views
             //};
             //ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
             //    RemoveButton.TranslationY = e.ScrollY;
-            //};
+            //};    derlict code, might reuse
         }
 
         protected override bool OnBackButtonPressed()
@@ -28,6 +30,12 @@ namespace Spell_Organizer_5E.Views
             return base.OnBackButtonPressed();
         }
 
+        /// <summary>
+        /// Event handler for add button,
+        /// Checks if the spell is in the list and if not add it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         async void OnAddButtonClicked(object sender, EventArgs args)
         {
             Button button = (Button)sender;
@@ -43,6 +51,13 @@ namespace Spell_Organizer_5E.Views
                 Console.WriteLine(App.activeSpellList.Spells);
             }
         }
+
+        /// <summary>
+        /// Event handler for remove button,
+        /// Checks if spell is in the list and if so, removes it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         async void OnRemoveButtonClicked(object sender, EventArgs args)
         {
             Button button = (Button)sender;

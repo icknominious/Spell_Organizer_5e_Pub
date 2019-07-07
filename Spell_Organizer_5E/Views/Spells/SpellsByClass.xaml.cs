@@ -2,12 +2,18 @@
 using System.Linq;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using Spell_Organizer_5E.Models;
 using Spell_Organizer_5E.ViewModels;
 
 
 namespace Spell_Organizer_5E.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    /// <summary>
+    /// Content page for spells filtered by class,
+    /// same functionality as AllSpells page excent has an additional picker for character classes
+    /// </summary>
     public partial class SpellsByClass : ContentPage
     {
         private IList<Spell> Spells = App.Database.GetSpellsAsync().Result;

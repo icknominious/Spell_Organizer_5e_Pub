@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using Spell_Organizer_5E.Views;
 
 namespace Spell_Organizer_5E
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AppShell : Shell
     {
         Dictionary<string, Type> routes = new Dictionary<string, Type>();
@@ -42,12 +44,6 @@ namespace Spell_Organizer_5E
 
         void OnNavigating(Object sender, ShellNavigatingEventArgs e)
         {
-            // Cancel any back navigation
-            //if (e.Source == ShellNavigationSource.Pop)
-            //{
-            //    e.Cancel();
-            //}
-
             
         }
 

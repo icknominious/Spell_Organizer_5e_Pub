@@ -4,11 +4,14 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO;
 using System;
-using System.Windows.Input;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Spell_Organizer_5E
 {
+
+    /// <summary>
+    /// Main app class definition
+    /// </summary>
     public partial class App : Application
     {
         static SODatabase database;
@@ -16,6 +19,9 @@ namespace Spell_Organizer_5E
         public static SpellList activeSpellList;
 
         readonly XMLReader myReader = new XMLReader();
+        /// <summary>
+        /// Iniatilizes DB if undefined
+        /// </summary>
         public static SODatabase Database
         {
             get
@@ -27,7 +33,9 @@ namespace Spell_Organizer_5E
                 return database;
             }
         }
-
+        /// <summary>
+        /// Makes a default spell list if there is no spell list
+        /// </summary>
         public static SpellList DefaultSpellList
         {
             get
@@ -47,7 +55,9 @@ namespace Spell_Organizer_5E
                 return defaultSpellList;
             }
         }
-
+        /// <summary>
+        /// App constructor
+        /// </summary>
         public App()
         {
             LoadData();
@@ -55,6 +65,10 @@ namespace Spell_Organizer_5E
             MainPage = new AppShell();
         }
 
+        /// <summary>
+        /// Reads spell contents of xml file and builds the App DB
+        /// temp: activeSpellList becomes DefaultSpellList
+        /// </summary>
         private async void LoadData()
         {
             await myReader.ReadFileAsync();

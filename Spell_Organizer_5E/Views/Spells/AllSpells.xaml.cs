@@ -2,19 +2,22 @@
 using System.Linq;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 using Spell_Organizer_5E.Models;
-using Spell_Organizer_5E.ViewModels;
 
 namespace Spell_Organizer_5E.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AllSpells : ContentPage
     {
         private IList<Spell> Spells = App.Database.GetSpellsAsync().Result;
 
+        /// <summary>
+        /// Constructor, sets page collection view and search handler to target spells from the DB
+        /// </summary>
         public AllSpells()
         {
             InitializeComponent();
-            //BindingContext = new SpellsViewModel(); beta code
             AllSpellsView.ItemsSource = Spells; 
             AllSpellSearchHandler.Spells = Spells;
         }
@@ -24,12 +27,24 @@ namespace Spell_Organizer_5E.Views
             base.OnAppearing();
         }
 
+        /// <summary>
+        /// Event handler for spell selected in the collection view,
+        /// navigates to selected spell card
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string spell = (e.CurrentSelection.FirstOrDefault() as Spell).Name;
             await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/allspells/spellcards?name={spell}");
         }
 
+        /// <summary>
+        /// Event handler for the sorting picker,
+        /// orders the collection view according to selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnSortingPickerSelectedIndexChanged(object sender, EventArgs e)
         {
             IEnumerable<Spell> sortedList = Spells;

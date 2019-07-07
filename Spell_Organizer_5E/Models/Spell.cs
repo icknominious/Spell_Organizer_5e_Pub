@@ -2,6 +2,9 @@
 
 namespace Spell_Organizer_5E.Models
 {
+    /// <summary>
+    /// Class: Spell, DB insertable objects that holds Spell functional and application data 
+    /// </summary>
     public class Spell
     {
         [PrimaryKey]
