@@ -29,7 +29,8 @@ namespace Spell_Organizer_5E.Views
         /// <param name="e"></param>
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string spellList = (e.CurrentSelection.FirstOrDefault() as SpellList).Name;
+            //string spellList = (e.CurrentSelection.FirstOrDefault() as SpellList).Name;
+            SpellListsView.SelectedItem = null;
             await Shell.Current.GoToAsync("spelllistcards");
         }
         private void ActivateButton_Clicked(object sender, EventArgs e)

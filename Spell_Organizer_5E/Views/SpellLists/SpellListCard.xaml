@@ -19,45 +19,49 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <StackLayout x:Name="SpellName" BackgroundColor="DarkSlateBlue" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                        <StackLayout x:Name="SpellName" BackgroundColor="DarkSlateBlue"  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                             <Label Text="{Binding Name}" 
-                           HorizontalOptions="Center" 
-                           Style="{DynamicResource TitleStyle}" />
+                               HorizontalOptions="Center" 
+                               Style="{DynamicResource TitleStyle}" />
                         </StackLayout>
                         <StackLayout x:Name="School" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="0">
                             <Label Text="{Binding School}" 
-                           FontAttributes="Italic" 
-                           HorizontalOptions="Center" />
+                               FontAttributes="Italic" 
+                               HorizontalOptions="Center" />
                         </StackLayout>
                         <Grid x:Name="Level" BackgroundColor="DarkSlateBlue" Grid.Row="1" Grid.Column="1">
                             <Label Text="Level: " 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="0"
-                           Grid.Column="0"/>
+                               HorizontalOptions="Center"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="0"
+                               Grid.Column="0"/>
                             <Label Text="{Binding Level}" 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="0"
-                           Grid.Column="1"/>
+                               HorizontalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="0"
+                               Grid.Column="1"/>
                         </Grid>
                         <Grid x:Name="Time" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
                             <Label Text="Casting Time: " 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}"
-                           Grid.Row="0"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}"
+                               Grid.Row="0"
+                               Grid.Column="0"/>
                             <Label Text="{Binding Time}" 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="1"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="1"
+                               Grid.Column="0"/>
                         </Grid>
                         <Grid x:Name="Range" BackgroundColor="DarkSlateBlue" Grid.Row="2" Grid.Column="1">
                             <Grid.RowDefinitions>
@@ -65,15 +69,16 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Label Text="Range: " 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="0"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="0"
+                               Grid.Column="0"/>
                             <Label Text="{Binding Range}" 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}"
-                           Grid.Row="1"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}"
+                               Grid.Row="1"
+                               Grid.Column="0"/>
                         </Grid>
                         <Grid x:Name="Components" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="0">
                             <Grid.RowDefinitions>
@@ -81,15 +86,16 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Label Text="Components: " 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="0"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="0"
+                               Grid.Column="0"/>
                             <Label Text="{Binding Components}" 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="1"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="1"
+                               Grid.Column="0"/>
                         </Grid>
                         <Grid x:Name="Duration" BackgroundColor="DarkSlateBlue" Grid.Row="3" Grid.Column="1">
                             <Grid.RowDefinitions>
@@ -97,24 +103,25 @@
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Label Text="Duration: " 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="0"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="0"
+                               Grid.Column="0"/>
                             <Label Text="{Binding Duration}" 
-                           HorizontalOptions="Start"
-                           Style="{DynamicResource BodyStyle}" 
-                           Grid.Row="1"
-                           Grid.Column="0"/>
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="FillAndExpand"
+                               Style="{DynamicResource BodyStyle}" 
+                               Grid.Row="1"
+                               Grid.Column="0"/>
                         </Grid>
                         <ScrollView x:Name="Text" BackgroundColor="DarkSlateBlue" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
                             <Label Text="{Binding Text}" 
-                       HorizontalOptions="CenterAndExpand"
-                       Style="{DynamicResource BodyStyle}" />
+                           HorizontalOptions="FillAndExpand"
+                           Style="{DynamicResource BodyStyle}" />
                         </ScrollView>
                         <StackLayout x:Name="Classes" BackgroundColor="DarkSlateBlue" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
                             <Label Text="{Binding Classes}" 
-                       Style="{DynamicResource BodyStyle}" />
+                           Style="{DynamicResource BodyStyle}" />
                         </StackLayout>
                     </Grid>
                     <Button Text="-"

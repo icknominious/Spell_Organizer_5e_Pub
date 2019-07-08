@@ -24,60 +24,60 @@
                     <Button  BackgroundColor="DarkCyan"
                              WidthRequest="{Binding Path=Width}"
                              HeightRequest="{Binding Path=Height}"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center"
                              Text="New Character"
                              TextColor="GhostWhite"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
                              Clicked="NC_Button_Clicked"/>
                 </StackLayout>
                 <StackLayout x:Name="SC" BackgroundColor="DarkCyan" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" BindingContext="{x:Reference Name=SC}">
                     <Button  BackgroundColor="DarkCyan"
                              WidthRequest="{Binding Path=Width}"
                              HeightRequest="{Binding Path=Height}"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center"
                              Text="Saved Characters"
                              TextColor="GhostWhite"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
                              Clicked="SC_Button_Clicked"/>
                 </StackLayout>
                 <StackLayout x:Name="SP" BackgroundColor="DarkViolet" Grid.Row="1" Grid.Column="0"  BindingContext="{x:Reference Name=SP}">
                     <Button  BackgroundColor="DarkViolet"
                              WidthRequest="{Binding Path=Width}"
                              HeightRequest="{Binding Path=Height}"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center" 
                              Text="Spells"
                              TextColor="GhostWhite"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
                              Clicked="SP_Button_Clicked"/>
                 </StackLayout>
                 <StackLayout x:Name="SbC" BackgroundColor="DarkViolet" Grid.Row="1" Grid.Column="1"  BindingContext="{x:Reference Name=SbC}">
                     <Button  BackgroundColor="DarkViolet"
                              WidthRequest="{Binding Path=Width}"
                              HeightRequest="{Binding Path=Height}"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center"
                              Text="Spells by Class"
                              TextColor="GhostWhite"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
                              Clicked="SbC_Button_Clicked"/>
                 </StackLayout>
                 <StackLayout x:Name="SbS" BackgroundColor="DarkViolet" Grid.Row="1" Grid.Column="2"  BindingContext="{x:Reference Name=SbS}">
                     <Button  BackgroundColor="DarkViolet"
                              WidthRequest="{Binding Path=Width}"
                              HeightRequest="{Binding Path=Height}"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center"
                              Text="Spells by School"
                              TextColor="GhostWhite"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
                              Clicked="SbS_Button_Clicked"/>
                 </StackLayout>
                 <StackLayout x:Name="SL" BackgroundColor="DarkOrange" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BindingContext="{x:Reference Name=SL}">
                     <Button  BackgroundColor="DarkOrange"
                              WidthRequest="{Binding Path=Width}"
                              HeightRequest="{Binding Path=Height}"
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center"
                              Text="Spell Lists"
                              TextColor="GhostWhite"
+                             VerticalOptions="FillAndExpand"
+                             HorizontalOptions="FillAndExpand"
                              Clicked="SL_Button_Clicked"/>
                 </StackLayout>
             </Grid>

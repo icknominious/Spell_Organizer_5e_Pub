@@ -50,6 +50,7 @@ namespace Spell_Organizer_5E.Views
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string spell = (e.CurrentSelection.FirstOrDefault() as Spell).Name;
+            SpellsBySchoolView.SelectedItem = null;
             await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/spellsbyschool/spellcards?name={spell}");
         }
     }

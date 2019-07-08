@@ -10,7 +10,7 @@ namespace Spell_Organizer_5E.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AllSpells : ContentPage
     {
-        private IList<Spell> Spells = App.Database.GetSpellsAsync().Result;
+        private readonly IList<Spell> Spells = App.Database.GetSpellsAsync().Result;
 
         /// <summary>
         /// Constructor, sets page collection view and search handler to target spells from the DB
@@ -36,6 +36,7 @@ namespace Spell_Organizer_5E.Views
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string spell = (e.CurrentSelection.FirstOrDefault() as Spell).Name;
+            AllSpellsView.SelectedItem = null;
             await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/allspells/spellcards?name={spell}");
         }
 
