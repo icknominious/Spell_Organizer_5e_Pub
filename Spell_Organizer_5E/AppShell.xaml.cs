@@ -36,12 +36,6 @@ namespace Spell_Organizer_5E
         }
 
 
-       
-
-        //    ShellNavigationState state = Shell.Current.CurrentState;
-        //    await Shell.Current.GoToAsync($"{state.Location}/{destinationRoute}?name={animalName}");
-        //    Shell.Current.FlyoutIsPresented = false;
-
         void OnNavigating(Object sender, ShellNavigatingEventArgs e)
         {
             

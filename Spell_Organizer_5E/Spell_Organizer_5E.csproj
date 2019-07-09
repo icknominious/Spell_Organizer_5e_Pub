@@ -58,36 +58,6 @@
     <None Update="Views\AboutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
-    <None Update="Views\BearDetailPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\BearsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\CatDetailPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\CatsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\DogDetailPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\DogsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\ElephantDetailPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\ElephantsPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\MonkeyDetailPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Views\MonkeysPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
   </ItemGroup>
   
 </Project>
