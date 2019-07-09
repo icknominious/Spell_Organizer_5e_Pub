@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Spell_Organizer_5E.Models;
 
+
 namespace Spell_Organizer_5E.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -35,9 +36,12 @@ namespace Spell_Organizer_5E.Views
         /// <param name="e"></param>
         async void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string spell = (e.CurrentSelection.FirstOrDefault() as Spell).Name;
-            AllSpellsView.SelectedItem = null;
-            await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/allspells/spellcards?name={spell}");
+            if (AllSpellsView.SelectedItem != null)
+            {
+                string spell = (e.CurrentSelection.FirstOrDefault() as Spell).Name;
+                await Shell.Current.GoToAsync($"app://xamarin.com/menu/spells/allspells/spellcards?name={spell}");
+                AllSpellsView.SelectedItem = null;
+            }
         }
 
         /// <summary>

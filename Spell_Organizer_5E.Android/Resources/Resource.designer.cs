@@ -26,6 +26,43 @@ namespace Spell_Organizer_5E.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::AndroidHUD.Resource.Attribute.ahBarColor = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahBarColor;
+			global::AndroidHUD.Resource.Attribute.ahBarLength = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahBarLength;
+			global::AndroidHUD.Resource.Attribute.ahBarWidth = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahBarWidth;
+			global::AndroidHUD.Resource.Attribute.ahCircleColor = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahCircleColor;
+			global::AndroidHUD.Resource.Attribute.ahDelayMillis = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahDelayMillis;
+			global::AndroidHUD.Resource.Attribute.ahRadius = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahRadius;
+			global::AndroidHUD.Resource.Attribute.ahRimColor = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahRimColor;
+			global::AndroidHUD.Resource.Attribute.ahRimWidth = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahRimWidth;
+			global::AndroidHUD.Resource.Attribute.ahSpinSpeed = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahSpinSpeed;
+			global::AndroidHUD.Resource.Attribute.ahText = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahText;
+			global::AndroidHUD.Resource.Attribute.ahTextColor = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahTextColor;
+			global::AndroidHUD.Resource.Attribute.ahTextSize = global::Spell_Organizer_5E.Droid.Resource.Attribute.ahTextSize;
+			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::Spell_Organizer_5E.Droid.Resource.Drawable.ic_errorstatus;
+			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::Spell_Organizer_5E.Droid.Resource.Drawable.ic_successstatus;
+			global::AndroidHUD.Resource.Drawable.roundedbg = global::Spell_Organizer_5E.Droid.Resource.Drawable.roundedbg;
+			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::Spell_Organizer_5E.Droid.Resource.Drawable.roundedbgdark;
+			global::AndroidHUD.Resource.Id.loadingImage = global::Spell_Organizer_5E.Droid.Resource.Id.loadingImage;
+			global::AndroidHUD.Resource.Id.loadingProgressBar = global::Spell_Organizer_5E.Droid.Resource.Id.loadingProgressBar;
+			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::Spell_Organizer_5E.Droid.Resource.Id.loadingProgressWheel;
+			global::AndroidHUD.Resource.Id.textViewStatus = global::Spell_Organizer_5E.Droid.Resource.Id.textViewStatus;
+			global::AndroidHUD.Resource.Layout.loading = global::Spell_Organizer_5E.Droid.Resource.Layout.loading;
+			global::AndroidHUD.Resource.Layout.loadingimage = global::Spell_Organizer_5E.Droid.Resource.Layout.loadingimage;
+			global::AndroidHUD.Resource.Layout.loadingprogress = global::Spell_Organizer_5E.Droid.Resource.Layout.loadingprogress;
+			global::AndroidHUD.Resource.String.library_name = global::Spell_Organizer_5E.Droid.Resource.String.library_name;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarColor = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahBarColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarLength = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahBarLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahBarWidth = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahBarWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahCircleColor = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahCircleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahDelayMillis = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahDelayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRadius = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahRadius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimColor = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahRimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahRimWidth = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahRimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahSpinSpeed = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahSpinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahText = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahText;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextColor = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahTextColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::Spell_Organizer_5E.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::Spell_Organizer_5E.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::Spell_Organizer_5E.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::Spell_Organizer_5E.Droid.Resource.Attribute.font;
@@ -2999,6 +3036,42 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f010086
 			public const int activityChooserViewStyle = 2130772102;
 			
+			// aapt resource value: 0x7f0101e0
+			public const int ahBarColor = 2130772448;
+			
+			// aapt resource value: 0x7f0101e8
+			public const int ahBarLength = 2130772456;
+			
+			// aapt resource value: 0x7f0101e7
+			public const int ahBarWidth = 2130772455;
+			
+			// aapt resource value: 0x7f0101e5
+			public const int ahCircleColor = 2130772453;
+			
+			// aapt resource value: 0x7f0101e4
+			public const int ahDelayMillis = 2130772452;
+			
+			// aapt resource value: 0x7f0101e6
+			public const int ahRadius = 2130772454;
+			
+			// aapt resource value: 0x7f0101e1
+			public const int ahRimColor = 2130772449;
+			
+			// aapt resource value: 0x7f0101e2
+			public const int ahRimWidth = 2130772450;
+			
+			// aapt resource value: 0x7f0101e3
+			public const int ahSpinSpeed = 2130772451;
+			
+			// aapt resource value: 0x7f0101dd
+			public const int ahText = 2130772445;
+			
+			// aapt resource value: 0x7f0101de
+			public const int ahTextColor = 2130772446;
+			
+			// aapt resource value: 0x7f0101df
+			public const int ahTextSize = 2130772447;
+			
 			// aapt resource value: 0x7f0100ab
 			public const int alertDialogButtonGroupStyle = 2130772139;
 			
@@ -5718,26 +5791,26 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f020079
-			public const int avd_hide_password_1 = 2130837625;
+			// aapt resource value: 0x7f02007d
+			public const int avd_hide_password_1 = 2130837629;
 			
-			// aapt resource value: 0x7f02007a
-			public const int avd_hide_password_2 = 2130837626;
+			// aapt resource value: 0x7f02007e
+			public const int avd_hide_password_2 = 2130837630;
 			
-			// aapt resource value: 0x7f02007b
-			public const int avd_hide_password_3 = 2130837627;
+			// aapt resource value: 0x7f02007f
+			public const int avd_hide_password_3 = 2130837631;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f02007c
-			public const int avd_show_password_1 = 2130837628;
+			// aapt resource value: 0x7f020080
+			public const int avd_show_password_1 = 2130837632;
 			
-			// aapt resource value: 0x7f02007d
-			public const int avd_show_password_2 = 2130837629;
+			// aapt resource value: 0x7f020081
+			public const int avd_show_password_2 = 2130837633;
 			
-			// aapt resource value: 0x7f02007e
-			public const int avd_show_password_3 = 2130837630;
+			// aapt resource value: 0x7f020082
+			public const int avd_show_password_3 = 2130837634;
 			
 			// aapt resource value: 0x7f020056
 			public const int character = 2130837590;
@@ -5770,79 +5843,91 @@ namespace Spell_Organizer_5E.Droid
 			public const int Home = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_mtrl_chip_checked_black = 2130837600;
+			public const int ic_errorstatus = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ic_mtrl_chip_checked_circle = 2130837601;
+			public const int ic_mtrl_chip_checked_black = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_mtrl_chip_close_circle = 2130837602;
+			public const int ic_mtrl_chip_checked_circle = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int info = 2130837603;
+			public const int ic_mtrl_chip_close_circle = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int launcher_foreground = 2130837604;
+			public const int ic_successstatus = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int mtrl_snackbar_background = 2130837605;
+			public const int info = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int mtrl_tabs_default_indicator = 2130837606;
+			public const int launcher_foreground = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int navigation_empty_icon = 2130837607;
+			public const int mtrl_snackbar_background = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int notification_action_background = 2130837608;
+			public const int mtrl_tabs_default_indicator = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int notification_bg = 2130837609;
+			public const int navigation_empty_icon = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int notification_bg_low = 2130837610;
+			public const int notification_action_background = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int notification_bg_low_normal = 2130837611;
+			public const int notification_bg = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int notification_bg_low_pressed = 2130837612;
+			public const int notification_bg_low = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int notification_bg_normal = 2130837613;
+			public const int notification_bg_low_normal = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int notification_bg_normal_pressed = 2130837614;
+			public const int notification_bg_low_pressed = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int notification_icon_background = 2130837615;
-			
-			// aapt resource value: 0x7f020077
-			public const int notification_template_icon_bg = 2130837623;
-			
-			// aapt resource value: 0x7f020078
-			public const int notification_template_icon_low_bg = 2130837624;
+			public const int notification_bg_normal = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int notification_tile_bg = 2130837616;
+			public const int notification_bg_normal_pressed = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int notify_panel_notification_icon_bg = 2130837617;
+			public const int notification_icon_background = 2130837617;
+			
+			// aapt resource value: 0x7f02007b
+			public const int notification_template_icon_bg = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int notification_template_icon_low_bg = 2130837628;
 			
 			// aapt resource value: 0x7f020072
-			public const int Spell_list = 2130837618;
+			public const int notification_tile_bg = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int Spells = 2130837619;
+			public const int notify_panel_notification_icon_bg = 2130837619;
 			
 			// aapt resource value: 0x7f020074
-			public const int splash_background = 2130837620;
+			public const int roundedbg = 2130837620;
 			
 			// aapt resource value: 0x7f020075
-			public const int tooltip_frame_dark = 2130837621;
+			public const int roundedbgdark = 2130837621;
 			
 			// aapt resource value: 0x7f020076
-			public const int tooltip_frame_light = 2130837622;
+			public const int Spell_list = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int Spells = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int splash_background = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int tooltip_frame_dark = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int tooltip_frame_light = 2130837626;
 			
 			static Drawable()
 			{
@@ -5875,8 +5960,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a003e
 			public const int SYM = 2131361854;
 			
-			// aapt resource value: 0x7f0a00b5
-			public const int action0 = 2131361973;
+			// aapt resource value: 0x7f0a00b9
+			public const int action0 = 2131361977;
 			
 			// aapt resource value: 0x7f0a008d
 			public const int action_bar = 2131361933;
@@ -5899,17 +5984,17 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0069
 			public const int action_bar_title = 2131361897;
 			
-			// aapt resource value: 0x7f0a00b2
-			public const int action_container = 2131361970;
+			// aapt resource value: 0x7f0a00b6
+			public const int action_container = 2131361974;
 			
 			// aapt resource value: 0x7f0a008e
 			public const int action_context_bar = 2131361934;
 			
-			// aapt resource value: 0x7f0a00b9
-			public const int action_divider = 2131361977;
+			// aapt resource value: 0x7f0a00bd
+			public const int action_divider = 2131361981;
 			
-			// aapt resource value: 0x7f0a00b3
-			public const int action_image = 2131361971;
+			// aapt resource value: 0x7f0a00b7
+			public const int action_image = 2131361975;
 			
 			// aapt resource value: 0x7f0a0003
 			public const int action_menu_divider = 2131361795;
@@ -5926,11 +6011,11 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a006b
 			public const int action_mode_close_button = 2131361899;
 			
-			// aapt resource value: 0x7f0a00b4
-			public const int action_text = 2131361972;
+			// aapt resource value: 0x7f0a00b8
+			public const int action_text = 2131361976;
 			
-			// aapt resource value: 0x7f0a00c2
-			public const int actions = 2131361986;
+			// aapt resource value: 0x7f0a00c6
+			public const int actions = 2131361990;
 			
 			// aapt resource value: 0x7f0a006c
 			public const int activity_chooser_view_content = 2131361900;
@@ -5986,8 +6071,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0072
 			public const int buttonPanel = 2131361906;
 			
-			// aapt resource value: 0x7f0a00b6
-			public const int cancel_action = 2131361974;
+			// aapt resource value: 0x7f0a00ba
+			public const int cancel_action = 2131361978;
 			
 			// aapt resource value: 0x7f0a004c
 			public const int center = 2131361868;
@@ -6001,8 +6086,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0086
 			public const int checkbox = 2131361926;
 			
-			// aapt resource value: 0x7f0a00be
-			public const int chronometer = 2131361982;
+			// aapt resource value: 0x7f0a00c2
+			public const int chronometer = 2131361986;
 			
 			// aapt resource value: 0x7f0a0061
 			public const int clip_horizontal = 2131361889;
@@ -6061,8 +6146,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0037
 			public const int end = 2131361847;
 			
-			// aapt resource value: 0x7f0a00c4
-			public const int end_padder = 2131361988;
+			// aapt resource value: 0x7f0a00c8
+			public const int end_padder = 2131361992;
 			
 			// aapt resource value: 0x7f0a0046
 			public const int enterAlways = 2131361862;
@@ -6118,8 +6203,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0071
 			public const int icon = 2131361905;
 			
-			// aapt resource value: 0x7f0a00c3
-			public const int icon_group = 2131361987;
+			// aapt resource value: 0x7f0a00c7
+			public const int icon_group = 2131361991;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int ifRoom = 2131361857;
@@ -6127,8 +6212,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a006e
 			public const int image = 2131361902;
 			
-			// aapt resource value: 0x7f0a00bf
-			public const int info = 2131361983;
+			// aapt resource value: 0x7f0a00c3
+			public const int info = 2131361987;
 			
 			// aapt resource value: 0x7f0a0068
 			public const int italic = 2131361896;
@@ -6157,23 +6242,32 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0070
 			public const int list_item = 2131361904;
 			
-			// aapt resource value: 0x7f0a00c5
-			public const int main_appbar = 2131361989;
+			// aapt resource value: 0x7f0a00b4
+			public const int loadingImage = 2131361972;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int main_scrollview = 2131361992;
+			// aapt resource value: 0x7f0a00b2
+			public const int loadingProgressBar = 2131361970;
 			
-			// aapt resource value: 0x7f0a00c7
-			public const int main_tablayout = 2131361991;
+			// aapt resource value: 0x7f0a00b5
+			public const int loadingProgressWheel = 2131361973;
 			
-			// aapt resource value: 0x7f0a00c6
-			public const int main_toolbar = 2131361990;
+			// aapt resource value: 0x7f0a00c9
+			public const int main_appbar = 2131361993;
 			
-			// aapt resource value: 0x7f0a00cf
-			public const int masked = 2131361999;
+			// aapt resource value: 0x7f0a00cc
+			public const int main_scrollview = 2131361996;
 			
-			// aapt resource value: 0x7f0a00b8
-			public const int media_actions = 2131361976;
+			// aapt resource value: 0x7f0a00cb
+			public const int main_tablayout = 2131361995;
+			
+			// aapt resource value: 0x7f0a00ca
+			public const int main_toolbar = 2131361994;
+			
+			// aapt resource value: 0x7f0a00d3
+			public const int masked = 2131362003;
+			
+			// aapt resource value: 0x7f0a00bc
+			public const int media_actions = 2131361980;
 			
 			// aapt resource value: 0x7f0a009c
 			public const int message = 2131361948;
@@ -6205,14 +6299,14 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0025
 			public const int normal = 2131361829;
 			
-			// aapt resource value: 0x7f0a00c1
-			public const int notification_background = 2131361985;
+			// aapt resource value: 0x7f0a00c5
+			public const int notification_background = 2131361989;
 			
-			// aapt resource value: 0x7f0a00bb
-			public const int notification_main_column = 2131361979;
+			// aapt resource value: 0x7f0a00bf
+			public const int notification_main_column = 2131361983;
 			
-			// aapt resource value: 0x7f0a00ba
-			public const int notification_main_column_container = 2131361978;
+			// aapt resource value: 0x7f0a00be
+			public const int notification_main_column_container = 2131361982;
 			
 			// aapt resource value: 0x7f0a0060
 			public const int outline = 2131361888;
@@ -6241,11 +6335,11 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0055
 			public const int right = 2131361877;
 			
-			// aapt resource value: 0x7f0a00c0
-			public const int right_icon = 2131361984;
+			// aapt resource value: 0x7f0a00c4
+			public const int right_icon = 2131361988;
 			
-			// aapt resource value: 0x7f0a00bc
-			public const int right_side = 2131361980;
+			// aapt resource value: 0x7f0a00c0
+			public const int right_side = 2131361984;
 			
 			// aapt resource value: 0x7f0a000c
 			public const int save_image_matrix = 2131361804;
@@ -6310,14 +6404,14 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a004f
 			public const int selected = 2131361871;
 			
-			// aapt resource value: 0x7f0a00c9
-			public const int shellcontent_appbar = 2131361993;
+			// aapt resource value: 0x7f0a00cd
+			public const int shellcontent_appbar = 2131361997;
 			
-			// aapt resource value: 0x7f0a00cb
-			public const int shellcontent_scrollview = 2131361995;
+			// aapt resource value: 0x7f0a00cf
+			public const int shellcontent_scrollview = 2131361999;
 			
-			// aapt resource value: 0x7f0a00ca
-			public const int shellcontent_toolbar = 2131361994;
+			// aapt resource value: 0x7f0a00ce
+			public const int shellcontent_toolbar = 2131361998;
 			
 			// aapt resource value: 0x7f0a0083
 			public const int shortcut = 2131361923;
@@ -6331,8 +6425,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a002c
 			public const int showTitle = 2131361836;
 			
-			// aapt resource value: 0x7f0a00cc
-			public const int sliding_tabs = 2131361996;
+			// aapt resource value: 0x7f0a00d0
+			public const int sliding_tabs = 2131362000;
 			
 			// aapt resource value: 0x7f0a00a4
 			public const int smallLabel = 2131361956;
@@ -6367,8 +6461,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a0056
 			public const int start = 2131361878;
 			
-			// aapt resource value: 0x7f0a00b7
-			public const int status_bar_latest_event_content = 2131361975;
+			// aapt resource value: 0x7f0a00bb
+			public const int status_bar_latest_event_content = 2131361979;
 			
 			// aapt resource value: 0x7f0a005b
 			public const int stretch = 2131361883;
@@ -6406,6 +6500,9 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a005a
 			public const int textStart = 2131361882;
 			
+			// aapt resource value: 0x7f0a00b3
+			public const int textViewStatus = 2131361971;
+			
 			// aapt resource value: 0x7f0a00af
 			public const int text_input_password_toggle = 2131361967;
 			
@@ -6418,8 +6515,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int textinput_helper_text = 2131361818;
 			
-			// aapt resource value: 0x7f0a00bd
-			public const int time = 2131361981;
+			// aapt resource value: 0x7f0a00c1
+			public const int time = 2131361985;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int title = 2131361827;
@@ -6430,8 +6527,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a007e
 			public const int title_template = 2131361918;
 			
-			// aapt resource value: 0x7f0a00cd
-			public const int toolbar = 2131361997;
+			// aapt resource value: 0x7f0a00d1
+			public const int toolbar = 2131362001;
 			
 			// aapt resource value: 0x7f0a0045
 			public const int top = 2131361861;
@@ -6472,8 +6569,8 @@ namespace Spell_Organizer_5E.Droid
 			// aapt resource value: 0x7f0a001b
 			public const int view_offset_helper = 2131361819;
 			
-			// aapt resource value: 0x7f0a00ce
-			public const int visible = 2131361998;
+			// aapt resource value: 0x7f0a00d2
+			public const int visible = 2131362002;
 			
 			// aapt resource value: 0x7f0a0043
 			public const int withText = 2131361859;
@@ -6716,79 +6813,88 @@ namespace Spell_Organizer_5E.Droid
 			public const int FlyoutContent = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int mtrl_layout_snackbar = 2130968622;
+			public const int loading = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int mtrl_layout_snackbar_include = 2130968623;
+			public const int loadingimage = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int notification_action = 2130968624;
+			public const int loadingprogress = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_action_tombstone = 2130968625;
+			public const int mtrl_layout_snackbar = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int notification_media_action = 2130968626;
+			public const int mtrl_layout_snackbar_include = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int notification_media_cancel_action = 2130968627;
+			public const int notification_action = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int notification_template_big_media = 2130968628;
+			public const int notification_action_tombstone = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int notification_template_big_media_custom = 2130968629;
+			public const int notification_media_action = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int notification_template_big_media_narrow = 2130968630;
+			public const int notification_media_cancel_action = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int notification_template_big_media_narrow_custom = 2130968631;
+			public const int notification_template_big_media = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int notification_template_custom_big = 2130968632;
+			public const int notification_template_big_media_custom = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int notification_template_icon_group = 2130968633;
+			public const int notification_template_big_media_narrow = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int notification_template_lines_media = 2130968634;
+			public const int notification_template_big_media_narrow_custom = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int notification_template_media = 2130968635;
+			public const int notification_template_custom_big = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int notification_template_media_custom = 2130968636;
+			public const int notification_template_icon_group = 2130968636;
 			
 			// aapt resource value: 0x7f04003d
-			public const int notification_template_part_chronometer = 2130968637;
+			public const int notification_template_lines_media = 2130968637;
 			
 			// aapt resource value: 0x7f04003e
-			public const int notification_template_part_time = 2130968638;
+			public const int notification_template_media = 2130968638;
 			
 			// aapt resource value: 0x7f04003f
-			public const int RootLayout = 2130968639;
+			public const int notification_template_media_custom = 2130968639;
 			
 			// aapt resource value: 0x7f040040
-			public const int select_dialog_item_material = 2130968640;
+			public const int notification_template_part_chronometer = 2130968640;
 			
 			// aapt resource value: 0x7f040041
-			public const int select_dialog_multichoice_material = 2130968641;
+			public const int notification_template_part_time = 2130968641;
 			
 			// aapt resource value: 0x7f040042
-			public const int select_dialog_singlechoice_material = 2130968642;
+			public const int RootLayout = 2130968642;
 			
 			// aapt resource value: 0x7f040043
-			public const int ShellContent = 2130968643;
+			public const int select_dialog_item_material = 2130968643;
 			
 			// aapt resource value: 0x7f040044
-			public const int support_simple_spinner_dropdown_item = 2130968644;
+			public const int select_dialog_multichoice_material = 2130968644;
 			
 			// aapt resource value: 0x7f040045
-			public const int Tabbar = 2130968645;
+			public const int select_dialog_singlechoice_material = 2130968645;
 			
 			// aapt resource value: 0x7f040046
-			public const int Toolbar = 2130968646;
+			public const int ShellContent = 2130968646;
+			
+			// aapt resource value: 0x7f040047
+			public const int support_simple_spinner_dropdown_item = 2130968647;
+			
+			// aapt resource value: 0x7f040048
+			public const int Tabbar = 2130968648;
+			
+			// aapt resource value: 0x7f040049
+			public const int Toolbar = 2130968649;
 			
 			static Layout()
 			{
@@ -6962,6 +7068,9 @@ namespace Spell_Organizer_5E.Droid
 			
 			// aapt resource value: 0x7f0d002e
 			public const int hide_bottom_view_on_scroll_behavior = 2131558446;
+			
+			// aapt resource value: 0x7f0d0036
+			public const int library_name = 2131558454;
 			
 			// aapt resource value: 0x7f0d002f
 			public const int mtrl_chip_close_icon_content_description = 2131558447;
@@ -10658,6 +10767,56 @@ namespace Spell_Organizer_5E.Droid
 			
 			// aapt resource value: 0
 			public const int PopupWindowBackgroundState_state_above_anchor = 0;
+			
+			public static int[] ProgressWheel = new int[] {
+					2130772445,
+					2130772446,
+					2130772447,
+					2130772448,
+					2130772449,
+					2130772450,
+					2130772451,
+					2130772452,
+					2130772453,
+					2130772454,
+					2130772455,
+					2130772456};
+			
+			// aapt resource value: 3
+			public const int ProgressWheel_ahBarColor = 3;
+			
+			// aapt resource value: 11
+			public const int ProgressWheel_ahBarLength = 11;
+			
+			// aapt resource value: 10
+			public const int ProgressWheel_ahBarWidth = 10;
+			
+			// aapt resource value: 8
+			public const int ProgressWheel_ahCircleColor = 8;
+			
+			// aapt resource value: 7
+			public const int ProgressWheel_ahDelayMillis = 7;
+			
+			// aapt resource value: 9
+			public const int ProgressWheel_ahRadius = 9;
+			
+			// aapt resource value: 4
+			public const int ProgressWheel_ahRimColor = 4;
+			
+			// aapt resource value: 5
+			public const int ProgressWheel_ahRimWidth = 5;
+			
+			// aapt resource value: 6
+			public const int ProgressWheel_ahSpinSpeed = 6;
+			
+			// aapt resource value: 0
+			public const int ProgressWheel_ahText = 0;
+			
+			// aapt resource value: 1
+			public const int ProgressWheel_ahTextColor = 1;
+			
+			// aapt resource value: 2
+			public const int ProgressWheel_ahTextSize = 2;
 			
 			public static int[] RecycleListView = new int[] {
 					2130772192,

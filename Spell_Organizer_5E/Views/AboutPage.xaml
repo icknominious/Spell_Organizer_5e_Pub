@@ -37,7 +37,7 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    <Span Text="Xamarin Animals" 
+                                    <Span Text="Spell Organizer 5e" 
                                           FontAttributes="Bold" 
                                           FontSize="22" />
                                     <Span Text=" " />

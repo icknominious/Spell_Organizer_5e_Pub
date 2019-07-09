@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Acr.UserDialogs;
 
 namespace Spell_Organizer_5E.Droid
 {
@@ -15,6 +16,7 @@ namespace Spell_Organizer_5E.Droid
             base.OnCreate(savedInstanceState);
             Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
+            UserDialogs.Init(this);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Acr.UserDialogs;
 
 namespace Spell_Organizer_5E.Views
 {
@@ -16,6 +17,8 @@ namespace Spell_Organizer_5E.Views
         public SpellCard()
         {
             InitializeComponent();
+
+            
 
             //ScrollView.Scrolled += (object sender, ScrolledEventArgs e) => {
             //    AddButton.TranslationY = e.ScrollY;
@@ -41,14 +44,17 @@ namespace Spell_Organizer_5E.Views
             Button button = (Button)sender;
             if (App.activeSpellList.Spells.Contains(button.CommandParameter.ToString()))
             {
-                Console.WriteLine("Spell already in list!");
+                SCToast(0);
+                //Console.WriteLine("Spell already in list!");
             }
             else
             {
+                SCToast(1);
                 App.activeSpellList.Spells += button.CommandParameter.ToString() + ", ";
                 await App.Database.SaveSpellListAsync(App.activeSpellList);
-                Console.WriteLine("Spell added to list!");
-                Console.WriteLine(App.activeSpellList.Spells);
+                MessagingCenter.Send<SpellCard>(this, "UpdateSpellListsViewSC");
+                //Console.WriteLine("Spell added to list!");
+                //Console.WriteLine(App.activeSpellList.Spells);
             }
         }
 
@@ -63,14 +69,52 @@ namespace Spell_Organizer_5E.Views
             Button button = (Button)sender;
             if (App.activeSpellList.Spells.Contains(button.CommandParameter.ToString()))
             {
+                SCToast(2);
                 App.activeSpellList.Spells = App.activeSpellList.Spells.Replace(button.CommandParameter.ToString() + ", ", "");
                 await App.Database.SaveSpellListAsync(App.activeSpellList);
-                Console.WriteLine(App.activeSpellList.Spells);
-                Console.WriteLine("Spell removed from list!");
+                MessagingCenter.Send<SpellCard>(this, "UpdateSpellListsViewSC");
+                //Console.WriteLine(App.activeSpellList.Spells);
+                //Console.WriteLine("Spell removed from list!");
             }
             else
             {
-                Console.WriteLine("Spell not in list!");
+                SCToast(3);
+                //Console.WriteLine("Spell not in list!");
+            }
+        }
+
+        /// <summary>
+        /// Puts a popup at the bottom of the display that confirms to the user their spell add/remove action
+        /// </summary>
+        /// <param name="arg"></param>
+        private static void SCToast(int arg)
+        {
+            ToastConfig toastConfig;
+            switch(arg)
+            {
+                case 0:
+                    toastConfig = new ToastConfig("Spell already in list");
+                    SetConfigs();
+                    break;  
+                case 1:
+                    toastConfig = new ToastConfig("Spell added to list");
+                    SetConfigs();
+                    break;  
+                case 2:
+                    toastConfig = new ToastConfig("Spell removed from list");
+                    SetConfigs();
+                    break;  
+                case 3:
+                    toastConfig = new ToastConfig("Spell not in list");
+                    SetConfigs();
+                    break;  
+            }
+            
+            void SetConfigs()
+            {
+                toastConfig.SetDuration(1000);
+                toastConfig.SetBackgroundColor(Color.DimGray);
+                UserDialogs.Instance.Toast(toastConfig);
             }
         }
     }
