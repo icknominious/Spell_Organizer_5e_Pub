@@ -19,4 +19,6 @@ Thank you for visting this repo. Hosted within is the early stage of a Spell Org
 
 ### Screenshots
 
+![Spell Card](SpellCard.png)  ![Spell Database View](SpellDB.png)
+
 
