@@ -1,6 +1,6 @@
 ## Spell_Organizer_5E
 
-Thank you for visting this repo. Hosted within is the early stage of a Spell Organizer app I'm making for mobile platforms. It lets you search a database of spells, add them to a spell list, and view the list as a series of swipable cards. The goal is to let users experience the closest thing to a hand of physical cards while enjoying the benefits of a digital medium such as sorting and persistent spell lists. Basic use cases are present but, overall, I rate the app as 25% complete. It has not been published yet being so earyl in development.
+Thank you for visting this repo. Hosted within is the early stage of a Spell Organizer app I'm making for mobile platforms. It lets you search a database of spells, add them to a spell list, and view the list as a series of swipable cards. The goal is to let users experience the closest thing to a hand of physical cards while enjoying the benefits of a digital medium such as sorting and persistent spell lists. Basic use cases are present but, overall, I rate the app as 25% complete. It has not been published yet being so early in development.
 
 ### Implemented Features
 
@@ -34,7 +34,6 @@ Thank you for visting this repo. Hosted within is the early stage of a Spell Org
 			i. Sorting on All Spells page
 			ii. Searching on All Spells page
 			iii. Fix spell card formatting
-			iv. Missing buttons bug
 		b. Characters
 			i. New
 			ii. Load
