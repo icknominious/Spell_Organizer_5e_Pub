@@ -21,4 +21,42 @@ Thank you for visting this repo. Hosted within is the early stage of a Spell Org
 
 ![Spell Card](SpellCard.png)  ![Spell Database View](SpellDB.png)
 
+### Progression
+	1. Navigation
+		a. Back button changes
+		b. Swipe between spells
+	2. Design
+		a. Colors
+		b. Spell card formatting
+		c. Ritual tags
+	3. Usability
+		a. Spells
+			i. Sorting on All Spells page
+			ii. Searching on All Spells page
+			iii. Fix spell card formatting
+			iv. Missing buttons bug
+		b. Characters
+			i. New
+			ii. Load
+			iii. Character wizard
+				1) Spell slots
+				2) Leveling 
+				3) Spell choices
+		c. Spell lists
+			i. Activate
+			ii. New
+			iii. Delete
+			iv. Sorting
+			v. Dice rolls
+		d. Other
+			i. Spell levels occasionally not appearing bug
+	4. Framework
+		a. Testing
+			i. Stability
+			ii. Performance
+			
+	
+
+
+
 
